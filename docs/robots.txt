@@ -1,0 +1,21 @@
+# robots.txt for 智装OS
+# AI全自动装机平台
+
+User-agent: *
+Allow: /
+
+# 禁止访问敏感目录
+Disallow: /pay/
+Disallow: /api/
+Disallow: /admin/
+
+# 允许爬取静态资源
+Allow: /css/
+Allow: /js/
+Allow: /images/
+
+# Sitemap位置（请替换为实际域名）
+Sitemap: https://www.zhizhuangos.com/sitemap.xml
+
+# 爬虫延迟
+Crawl-delay: 1

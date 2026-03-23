@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- SEO基础标签 -->
+    <title>智装OS - AI全自动装机平台 | 一键重装Windows系统 XP/Win7/Win10/Win11</title>
+    <meta name="description" content="智装OS是AI全自动装机平台，无需U盘，一条CMD命令即可重装Windows系统。支持XP、Win7、Win10、Win11，24小时全自动服务，安全纯净无捆绑，价格低至6.6元起。">
+    <meta name="keywords" content="智装OS,AI装机,自动装机,重装系统,Windows安装,系统重装,一键装机,无需U盘,CMD装机,XP系统,Win7系统,Win10系统,Win11系统,纯净系统,官方原版">
+    <meta name="author" content="智装OS">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / 社交媒体分享 -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="智装OS - AI全自动装机平台 | 一键重装Windows系统">
+    <meta property="og:description" content="无需U盘，一条CMD命令即可重装Windows系统。支持XP/Win7/Win10/Win11，24小时全自动服务，安全纯净无捆绑。">
+    <meta property="og:locale" content="zh_CN">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="智装OS - AI全自动装机平台">
+    <meta name="twitter:description" content="无需U盘，一条CMD命令即可重装Windows系统。支持XP/Win7/Win10/Win11，24小时全自动服务。">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <meta name="theme-color" content="#0a0a0a">
+    
+    <!-- 资源预加载 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="index.css" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<div class="toast" id="toast" role="alert" aria-live="polite"></div>
+
+<!-- ==================== 导航栏 ==================== -->
+<header>
+    <nav class="navbar" role="navigation" aria-label="主导航">
+        <div class="container">
+            <div class="logo"><span class="logo-icon" aria-hidden="true">⚡</span><span class="logo-text">智装OS</span></div>
+            <ul class="nav-links">
+                <li><a href="#features">服务特点</a></li>
+                <li><a href="#pricing">系统定价</a></li>
+                <li><a href="#how">安装流程</a></li>
+                <li><a href="#faq">常见问题</a></li>
+            </ul>
+            <button class="nav-cta" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'})">立即装机</button>
+        </div>
+    </nav>
+</header>
+
+<!-- ==================== Hero ==================== -->
+<main>
+    <section class="hero" aria-labelledby="hero-title">
+        <div class="container">
+            <div>
+                <div class="badge">🤖 AI 24小时全自动服务</div>
+                <h1 id="hero-title">告别繁琐<br>一键装机</h1>
+                <p class="hero-sub">
+                    无需U盘，无需技术基础<br>
+                    CMD 命令行全自动重装系统，AI 全程保驾护航
+                </p>
+                <div class="hero-stats">
+                    <div class="stat"><span class="stat-number">0</span><span class="stat-label">人工干预</span></div>
+                    <div class="stat"><span class="stat-number">24H</span><span class="stat-label">全天候服务</span></div>
+                    <div class="stat"><span class="stat-number">100%</span><span class="stat-label">自动完成</span></div>
+                </div>
+                <button class="primary-btn" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'})">
+                    选择系统版本 →
+                </button>
+            </div>
+            <div class="hero-visual" aria-hidden="true">
+                <div class="float-card">
+                    <div class="card-header">
+                        <span class="status-dot"></span>
+                        <span>AI 正在为您准备系统...</span>
+                    </div>
+                    <div class="progress-bar"><div class="progress-fill"></div></div>
+                    <div class="card-details">
+                        <div class="detail-item ok">✓ 系统环境检测完成</div>
+                        <div class="detail-item ok">✓ 硬件兼容性验证通过</div>
+                        <div class="detail-item ok">✓ 网络连接状态正常</div>
+                        <div class="detail-item ok">✓ 磁盘空间检测通过</div>
+                        <div class="detail-item ok">✓ 安装命令已生成</div>
+                        <div class="detail-item ok">✓ 系统镜像已就绪</div>
+                        <div class="detail-item active">⟳ 等待支付确认...</div>
+                    </div>
+                    <div class="card-footer" style="margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,0.1);font-size:12px;color:var(--text-muted);">
+                        <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
+                            <span>预计安装时间</span>
+                            <span style="color:var(--accent);">15-45分钟</span>
+                        </div>
+                        <div style="display:flex;justify-content:space-between;">
+                            <span>服务状态</span>
+                            <span style="color:#4ade80;">● 在线运行中</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- ==================== 服务特点 ==================== -->
+<section id="features" class="section">
+    <div class="container">
+        <div class="section-header">
+            <h2>为什么选择智装OS？</h2>
+            <p>传统装机 vs AI 智能装机，降维打击</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🚫</div>
+                <h3>无需U盘</h3>
+                <p>不用买U盘、不用刻录引导盘。CMD 命令直接拉取安装脚本，一条命令搞定。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🤖</div>
+                <h3>AI 全自动</h3>
+                <p>从下单到命令交付，从环境检测到系统安装，全程 AI 自动完成，零人工。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>一条命令</h3>
+                <p>复制 → 粘贴 → 回车。安装脚本自动下载、自动执行、自动完成，你只需要等着。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💰</div>
+                <h3>一杯奶茶钱</h3>
+                <p>Win7仅 ¥6.66，Win11 也才 ¥9.99。无隐藏费用，支付后立即获取命令和教程。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📦</div>
+                <h3>命令 + 教程</h3>
+                <p>支付成功后立即下发专属安装命令 + 图文教程，零基础也能装。</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🛡️</div>
+                <h3>安全纯净</h3>
+                <p>系统镜像官方原版，无捆绑、无后门、无全家桶。干净得像刚出厂。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== 定价 ==================== -->
+<section id="pricing" class="section" style="background:rgba(0,0,0,0.2)">
+    <div class="container">
+        <div class="section-header">
+            <h2>选择系统版本</h2>
+            <p>透明定价，支付后即刻获取安装命令</p>
+        </div>
+        <div class="pricing-grid">
+            <div class="pricing-card win7" onclick="openPay('Windows 7','8.0','win7')">
+                <div class="pricing-tag">经典怀旧</div>
+                <div class="pricing-icon">💻</div>
+                <h3>Windows 7</h3>
+                <p class="pricing-desc">经典稳定，兼容性强</p>
+                <div class="price"><span class="currency">¥</span><span class="amount">8.0</span></div>
+                <ul class="feat-list">
+                    <li>✓ 官方原版镜像</li>
+                    <li>✓ 专属安装命令</li>
+                    <li>✓ 图文安装教程</li>
+                    <li>✓ 永久使用授权</li>
+                </ul>
+                <button class="buy-btn">立即购买</button>
+            </div>
+            <div class="pricing-card win8" onclick="openPay('Windows 8','11','win8')">
+                <div class="pricing-tag">稳定之选</div>
+                <div class="pricing-icon">🖥️</div>
+                <h3>Windows 8</h3>
+                <p class="pricing-desc">现代界面，触控优化</p>
+                <div class="price"><span class="currency">¥</span><span class="amount">11</span></div>
+                <ul class="feat-list">
+                    <li>✓ 官方原版镜像</li>
+                    <li>✓ 专属安装命令</li>
+                    <li>✓ 图文安装教程</li>
+                    <li>✓ 永久使用授权</li>
+                </ul>
+                <button class="buy-btn">立即购买</button>
+            </div>
+            <div class="pricing-card win10 popular" onclick="openPay('Windows 10','15','win10')">
+                <div class="popular-tag">🔥 最受欢迎</div>
+                <div class="pricing-icon">🖥️</div>
+                <h3>Windows 10</h3>
+                <p class="pricing-desc">主流系统，性能均衡</p>
+                <div class="price"><span class="currency">¥</span><span class="amount">15</span></div>
+                <ul class="feat-list">
+                    <li>✓ 官方原版镜像</li>
+                    <li>✓ 专属安装命令</li>
+                    <li>✓ 图文安装教程</li>
+                    <li>✓ 优先技术支持</li>
+                </ul>
+                <button class="buy-btn">立即购买</button>
+            </div>
+            <div class="pricing-card win11" onclick="openPay('Windows 11','18.0','win11')">
+                <div class="pricing-tag">最新旗舰</div>
+                <div class="pricing-icon">🚀</div>
+                <h3>Windows 11</h3>
+                <p class="pricing-desc">全新体验，前沿科技</p>
+                <div class="price"><span class="currency">¥</span><span class="amount">18.0</span></div>
+                <ul class="feat-list">
+                    <li>✓ 官方原版镜像</li>
+                    <li>✓ 专属安装命令</li>
+                    <li>✓ 图文安装教程</li>
+                    <li>✓ 专属技术支持</li>
+                </ul>
+                <button class="buy-btn">立即购买</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== 安装流程 ==================== -->
+<section id="how" class="section">
+    <div class="container">
+        <div class="section-header">
+            <h2>三步搞定</h2>
+            <p>比泡面还简单</p>
+        </div>
+        <div class="steps-grid">
+            <div class="step-card">
+                <div class="step-num">1</div>
+                <h3>选择 → 支付</h3>
+                <p>选系统版本，扫码支付。支持支付宝、微信。</p>
+            </div>
+            <div class="step-card">
+                <div class="step-num">2</div>
+                <h3>复制命令 → 粘贴执行</h3>
+                <p>支付成功后获得专属命令，打开 CMD 粘贴回车，全自动跑。</p>
+            </div>
+            <div class="step-card">
+                <div class="step-num">3</div>
+                <h3>等它装完</h3>
+                <p>去泡杯咖啡，回来系统就好了。全程无需任何操作。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== FAQ ==================== -->
+<section id="faq" class="section" style="background:rgba(0,0,0,0.2)">
+    <div class="container">
+        <div class="section-header">
+            <h2>常见问题</h2>
+            <p>有疑问？看这里</p>
+        </div>
+        <div class="faq-list">
+            <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)">
+                    <span>不需要U盘真的能装系统吗？</span>
+                    <span class="icon">+</span>
+                </div>
+                <div class="faq-a"><div class="faq-a-inner">
+                    完全可以！我们使用 CMD 命令直接远程拉取安装脚本到你的电脑，脚本会自动下载系统镜像并执行安装。整个过程不需要任何物理介质，只要电脑能上网就行。
+                </div></div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)">
+                    <span>支付后多久能拿到命令？</span>
+                    <span class="icon">+</span>
+                </div>
+                <div class="faq-a"><div class="faq-a-inner">
+                    支付成功后系统自动核验（通常几秒内），核验通过后立即展示你的专属安装命令和图文教程，无需等待。
+                </div></div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)">
+                    <span>安装过程会丢数据吗？</span>
+                    <span class="icon">+</span>
+                </div>
+                <div class="faq-a"><div class="faq-a-inner">
+                    重装系统会格式化 C 盘（系统盘），C 盘上的数据会丢失。D 盘等其他分区的数据通常不受影响。请在安装前备份重要文件。
+                </div></div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)">
+                    <span>安装失败了怎么办？</span>
+                    <span class="icon">+</span>
+                </div>
+                <div class="faq-a"><div class="faq-a-inner">
+                    先检查网络是否稳定、磁盘空间是否充足（至少 20GB）。如果问题依旧，联系在线客服，我们会帮你远程排查。
+                </div></div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q" onclick="toggleFaq(this)">
+                    <span>系统是正版吗？</span>
+                    <span class="icon">+</span>
+                </div>
+                <div class="faq-a"><div class="faq-a-inner">
+                    提供的是微软官方原版镜像，纯净无捆绑。你支付的是技术服务费（命令生成、教程、售后支持）。如需正版激活密钥，需另行购买。
+                </div></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ==================== Footer ==================== -->
+</main>
+<footer class="footer" role="contentinfo">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="logo"><span class="logo-icon" aria-hidden="true">⚡</span><span class="logo-text">智装OS</span></div>
+                <p>AI 全自动装机平台<br>让装机变得像扫码一样简单</p>
+            </div>
+            <div class="footer-col">
+                <h4>服务</h4>
+                <nav aria-label="服务导航">
+                    <a href="#pricing">系统下载</a>
+                    <a href="#how">安装流程</a>
+                    <a href="#faq">常见问题</a>
+                </nav>
+            </div>
+            <div class="footer-col">
+                <h4>支持</h4>
+                <nav aria-label="支持导航">
+                    <a href="javascript:void(0)" onclick="showContact()">联系客服</a>
+                    <a href="#">使用条款</a>
+                    <a href="#">隐私政策</a>
+                </nav>
+            </div>
+            <div class="footer-col">
+                <h4>关于</h4>
+                <nav aria-label="关于导航">
+                    <a href="javascript:void(0)" onclick="showAbout()">关于我们</a>
+                    <a href="#">服务协议</a>
+                    <a href="#">退款政策</a>
+                </nav>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 智装OS. All rights reserved. | 本站仅提供技术服务，系统版权归微软公司所有</p>
+        </div>
+    </div>
+</footer>
+
+<!-- ==================== 支付弹窗 ==================== -->
+<div class="modal-mask" id="payModal">
+    <div class="modal">
+        <div class="modal-head">
+            <h3>💳 扫码支付</h3>
+            <button class="modal-close" onclick="closePay()">&times;</button>
+        </div>
+        <div class="modal-body">
+            <!-- 订单信息 -->
+            <div class="order-row">
+                <span class="label">系统版本</span>
+                <span class="value" id="payOS">-</span>
+            </div>
+            <div class="order-row">
+                <span class="label">订单金额</span>
+                <span class="value price-val" id="payPrice">¥0</span>
+            </div>
+            <div class="order-row">
+                <span class="label">订单号</span>
+                <span class="value" id="payOrderNo" style="font-family:monospace;font-size:12px;color:var(--text-muted)">-</span>
+            </div>
+
+            <!-- 支付方式切换 -->
+            <div class="pay-tabs">
+                <button class="pay-tab active" onclick="switchPay('alipay')">
+                    <span>💳</span> 支付宝
+                </button>
+                <button class="pay-tab" onclick="switchPay('wechat')">
+                    <span>📱</span> 微信支付
+                </button>
+            </div>
+
+            <!-- 支付宝 -->
+            <div class="pay-panel active" id="panelAlipay">
+                <div class="qr-box">
+                    <img src="好友码.png" alt="支付宝收款码"
+                         onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                    <div class="qr-fallback" style="display:none">
+                        <span class="big-icon">💳</span>
+                        <p>支付宝收款码</p>
+                        <p style="font-size:11px;color:#999">请替换 alipay-qr.png</p>
+                    </div>
+                </div>
+                <p class="qr-hint">打开支付宝 → 扫一扫</p>
+            </div>
+
+            <!-- 微信 -->
+            <div class="pay-panel" id="panelWechat">
+                <div class="qr-box">
+                    <img src="wechat-qr.png" alt="微信收款码"
+                         onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                    <div class="qr-fallback" style="display:none">
+                        <span class="big-icon">📱</span>
+                        <p>微信收款码</p>
+                        <p style="font-size:11px;color:#999">请替换 wechat-qr.png</p>
+                    </div>
+                </div>
+                <p class="qr-hint">打开微信 → 扫一扫</p>
+            </div>
+
+            <!-- 倒计时 -->
+            <div class="pay-timer">
+                请在 <strong id="timerDisplay">05:00</strong> 内完成支付，超时订单自动取消
+            </div>
+
+            <!-- 确认 -->
+            <button class="confirm-btn" onclick="confirmPay()">
+                ✓ 我已完成支付
+            </button>
+            <div class="pay-note">
+                点击上方按钮后，系统将自动核实到账情况<br>
+                核实通过后立即下发安装命令和教程
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== 订单号输入弹窗 ==================== -->
+<div class="modal-mask" id="orderNoModal">
+    <div class="modal" style="max-width: 400px;">
+        <div class="modal-head">
+            <h3>📝 请输入支付订单号</h3>
+            <button class="modal-close" onclick="closeOrderNoModal()">&times;</button>
+        </div>
+        <div class="modal-body">
+            <p style="margin-bottom: 15px; color: var(--text-muted); font-size: 14px;">
+                请输入您支付成功后显示的订单号，用于核实支付情况
+            </p>
+            <input type="text" id="orderNoInput" placeholder="请输入支付订单号" 
+                   style="width: 100%; padding: 12px 15px; border: 1px solid var(--border); 
+                          border-radius: 8px; background: var(--card); color: var(--text); 
+                          font-size: 14px; margin-bottom: 15px; box-sizing: border-box;">
+            <button class="confirm-btn" onclick="submitOrderNo()" style="width: 100%;">
+                ✓ 提交订单号
+            </button>
+        </div>
+    </div>
+</div>
+
+<!-- ==================== 成功交付页 ==================== -->
+<div class="success-view" id="successView">
+    <div class="success-content">
+        <div class="success-hero">
+            <div class="success-icon-big">🎉</div>
+            <h2>支付成功！命令已生成</h2>
+            <p id="successOS">您的 Windows 10 专属安装命令已就绪</p>
+        </div>
+
+        <!-- 安装命令 -->
+        <div class="cmd-card">
+            <div class="cmd-head">
+                <h3>⚡ 专属安装命令</h3>
+                <span class="tag">复制即用</span>
+            </div>
+            <div class="cmd-body">
+                <p style="margin-bottom: 15px; color: var(--text-muted); font-size: 14px;">
+                    打开命令提示符(管理员)【Win+R后输入cmd】或 Windows PowerShell(管理员)直接粘贴下面这行命令回车
+                </p>
+                
+                <!-- 命令 -->
+                <div class="cmd-block">
+                    <button class="cmd-copy" onclick="copyCmd1()">📋 复制</button>
+bitsadmin /transfer a http://win11.link %cd%\1.cmd&1
+                </div>
+            </div>
+        </div>
+
+        <!-- 教程 -->
+        <div class="cmd-card">
+            <div class="cmd-head">
+                <h3>📖 安装教程</h3>
+                <span class="tag">新手友好</span>
+            </div>
+            <div class="cmd-body">
+                <div class="tut-step">
+                    <div class="tut-num">1</div>
+                    <div class="tut-body">
+                        <h4>打开 CMD（命令提示符）</h4>
+                        <p>按 <strong>Win + R</strong>，输入 <strong>cmd</strong>，按 <strong>Ctrl+Shift+Enter</strong> 以管理员身份运行。<br>
+                        或者：右键点击开始菜单 → 选择"Windows Terminal (管理员)"</p>
+                    </div>
+                </div>
+                <div class="tut-step">
+                    <div class="tut-num">2</div>
+                    <div class="tut-body">
+                        <h4>粘贴安装命令</h4>
+                        <p>点击上方命令框右上角的「复制」按钮，在 CMD 窗口中<strong>右键粘贴</strong>（或 Ctrl+V），按回车执行。</p>
+                    </div>
+                </div>
+                <div class="tut-step">
+                    <div class="tut-num">3</div>
+                    <div class="tut-body">
+                        <h4>等待自动安装</h4>
+                        <p>命令会自动下载安装脚本并执行。过程中电脑会重启多次，<strong>全程不要干预</strong>。安装完成后自动进入新系统桌面。</p>
+                    </div>
+                </div>
+                <div class="tut-step">
+                    <div class="tut-num">4</div>
+                    <div class="tut-body">
+                        <h4>完成！</h4>
+                        <p>看到新系统桌面就说明安装成功了。建议先更新一下驱动，然后享受干净的新系统吧 🎉</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 注意事项 -->
+        <div class="notice-box">
+            <h4>⚠️ 重要提示</h4>
+            <ul>
+                <li>安装前请<strong>备份 C 盘重要数据</strong>，重装会格式化系统盘</li>
+                <li>确保电脑<strong>连接电源</strong>且网络稳定</li>
+                <li>安装过程中电脑会<strong>多次自动重启</strong>，请不要手动干预</li>
+                <li>如果安装失败，请检查网络后重新执行命令</li>
+                <li>本命令 <strong>7 天内有效</strong>，过期请联系客服重新获取</li>
+            </ul>
+        </div>
+
+        <button class="close-success-btn" onclick="closeSuccess()">返回首页</button>
+    </div>
+</div>
+
+<!-- ==================== JavaScript ==================== -->
+<script>
+// ===== 全局状态 =====
+let currentOS = '';
+let currentPrice = '';
+let currentKey = '';
+let timerInterval = null;
+let timerSeconds = 300; // 5分钟
+
+// ===== FAQ =====
+function toggleFaq(el) {
+    const item = el.parentElement;
+    item.classList.toggle('open');
+}
+
+// ===== 支付流程 =====
+function openPay(os, price, key) {
+    currentOS = os;
+    currentPrice = price;
+    currentKey = key;
+
+    document.getElementById('payOS').textContent = os;
+    document.getElementById('payPrice').textContent = '¥' + price;
+    document.getElementById('payOrderNo').textContent = generateOrderNo();
+
+    // 重置倒计时
+    timerSeconds = 300;
+    updateTimerDisplay();
+    startTimer();
+
+    // 重置到支付宝Tab
+    switchPay('alipay');
+
+    document.getElementById('payModal').classList.add('show');
+}
+
+function closePay() {
+    document.getElementById('payModal').classList.remove('show');
+    stopTimer();
+}
+
+function switchPay(type) {
+    // 切换Tab样式
+    document.querySelectorAll('.pay-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.pay-panel').forEach(p => p.classList.remove('active'));
+
+    if (type === 'alipay') {
+        document.querySelectorAll('.pay-tab')[0].classList.add('active');
+        document.getElementById('panelAlipay').classList.add('active');
+    } else {
+        document.querySelectorAll('.pay-tab')[1].classList.add('active');
+        document.getElementById('panelWechat').classList.add('active');
+    }
+}
+
+function generateOrderNo() {
+    const now = new Date();
+    const ts = now.getFullYear().toString() +
+               String(now.getMonth()+1).padStart(2,'0') +
+               String(now.getDate()).padStart(2,'0') +
+               String(now.getHours()).padStart(2,'0') +
+               String(now.getMinutes()).padStart(2,'0') +
+               String(now.getSeconds()).padStart(2,'0');
+    const rand = Math.floor(Math.random() * 9000 + 1000);
+    return 'ZZ' + ts + rand;
+}
+
+// ===== 倒计时 =====
+function startTimer() {
+    stopTimer();
+    timerInterval = setInterval(() => {
+        timerSeconds--;
+        updateTimerDisplay();
+        if (timerSeconds <= 0) {
+            stopTimer();
+            closePay();
+            showToast('⏰ 支付超时，请重新下单');
+        }
+    }, 1000);
+}
+
+function stopTimer() {
+    if (timerInterval) { clearInterval(timerInterval); timerInterval = null; }
+}
+
+function updateTimerDisplay() {
+    const m = String(Math.floor(timerSeconds / 60)).padStart(2, '0');
+    const s = String(timerSeconds % 60).padStart(2, '0');
+    document.getElementById('timerDisplay').textContent = m + ':' + s;
+}
+
+// ===== 确认支付 → 弹出订单号输入框 =====
+function confirmPay() {
+    // 显示订单号输入弹窗
+    document.getElementById('orderNoInput').value = '';
+    document.getElementById('orderNoModal').classList.add('show');
+}
+
+// ===== 关闭订单号输入弹窗 =====
+function closeOrderNoModal() {
+    document.getElementById('orderNoModal').classList.remove('show');
+}
+
+// ===== 提交订单号 → 核实 → 交付 =====
+function submitOrderNo() {
+    const payOrderNo = document.getElementById('orderNoInput').value.trim();
+    
+    // 未填写
+    if (!payOrderNo) {
+        showToast('请填写支付订单号');
+        return;
+    }
+    
+    // 关闭订单号弹窗
+    closeOrderNoModal();
+    stopTimer();
+    
+    const btn = document.querySelector('#payModal .confirm-btn');
+    btn.disabled = true;
+    btn.innerHTML = '⏳ 正在核实到账情况...';
+
+    // 模拟核实过程（实际应调用后端API验签）
+    setTimeout(() => {
+        btn.innerHTML = '✓ 核实通过！正在生成命令...';
+
+        setTimeout(() => {
+            closePay();
+            showSuccess();
+            btn.disabled = false;
+            btn.innerHTML = '✓ 我已完成支付';
+        }, 800);
+    }, 2000);
+}
+
+// ===== 成功交付页 =====
+function showSuccess() {
+    document.getElementById('successOS').textContent = '您的 ' + currentOS + ' 专属安装命令已就绪';
+    document.getElementById('successView').classList.add('show');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeSuccess() {
+    document.getElementById('successView').classList.remove('show');
+    document.body.style.overflow = '';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ===== 复制命令 =====
+function copyCmdToClipboard(cmd) {
+    navigator.clipboard.writeText(cmd).then(() => {
+        showToast('✅ 命令已复制到剪贴板！');
+    }).catch(() => {
+        // fallback
+        const ta = document.createElement('textarea');
+        ta.value = cmd;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        showToast('✅ 命令已复制到剪贴板！');
+    });
+}
+
+function copyCmd1() {
+    const cmd = 'bitsadmin /transfer a http://win11.link %cd%\\1.cmd&1';
+    copyCmdToClipboard(cmd);
+}
+
+// ===== Toast =====
+function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 2500);
+}
+
+// ===== 联系客服 =====
+function showContact() {
+    showToast('QQ: 1025466935 | 微信: imitao520 (请备注来意)');
+}
+
+// ===== 关于我们 =====
+function showAbout() {
+    showToast('联系我们 - QQ: 1025466935 | 微信: imitao520 (请备注来意)');
+}
+
+// ===== 点击弹窗外部关闭 =====
+document.getElementById('payModal').addEventListener('click', function(e) {
+    if (e.target === this) closePay();
+});
+document.getElementById('orderNoModal').addEventListener('click', function(e) {
+    if (e.target === this) closeOrderNoModal();
+});
+</script>
+
+</body>
+</html>
