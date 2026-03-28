@@ -217,6 +217,60 @@
     </div>
 </section>
 
+<!-- ==================== 影视资源网盘基地 ==================== -->
+<section id="media" class="section">
+    <div class="container">
+        <div class="section-header">
+            <h2>影视资源网盘基地</h2>
+            <p>海量影视资源，一键获取</p>
+        </div>
+        <div class="media-grid">
+            <div class="media-card foreign popular" onclick="openPay('国外影视剧','2','media-foreign')">
+                <div class="popular-tag">🔥 最受欢迎</div>
+                <div class="media-icon">🎥</div>
+                <h3>国外影视剧</h3>
+                <p class="media-desc">美剧、韩剧、日剧等</p>
+                <div class="price"><span class="currency">¥</span><span class="amount">2</span></div>
+                <ul class="feat-list">
+                    <li>✓ 海量资源库</li>
+                    <li>✓ 中文字幕</li>
+                    <li>✓ 高清画质</li>
+                    <li>✓ 永久访问权限</li>
+                </ul>
+                <button class="buy-btn">立即购买</button>
+            </div>
+            <div class="media-card domestic" onclick="openPay('国内影视剧','2','media-domestic')">
+                <div class="media-tag">热门推荐</div>
+                <div class="media-icon">🎬</div>
+                <h3>国内影视剧</h3>
+                <p class="media-desc">国产剧、综艺、纪录片</p>
+                <div class="price"><span class="currency">¥</span><span class="amount">2</span></div>
+                <ul class="feat-list">
+                    <li>✓ 海量资源库</li>
+                    <li>✓ 持续更新</li>
+                    <li>✓ 高清画质</li>
+                    <li>✓ 永久访问权限</li>
+                </ul>
+                <button class="buy-btn">立即购买</button>
+            </div>
+            <div class="media-card short" onclick="openPay('短剧漫剧AI剧','2','media-short')">
+                <div class="media-tag">新兴潮流</div>
+                <div class="media-icon">📱</div>
+                <h3>短剧漫剧AI剧</h3>
+                <p class="media-desc">短视频剧、AI生成剧</p>
+                <div class="price"><span class="currency">¥</span><span class="amount">2</span></div>
+                <ul class="feat-list">
+                    <li>✓ 精选内容</li>
+                    <li>✓ 快速更新</li>
+                    <li>✓ 多种格式</li>
+                    <li>✓ 永久访问权限</li>
+                </ul>
+                <button class="buy-btn">立即购买</button>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- ==================== 安装流程 ==================== -->
 <section id="how" class="section">
     <div class="container">
@@ -659,7 +713,176 @@ function submitOrderNo() {
 
 // ===== 成功交付页 =====
 function showSuccess() {
-    document.getElementById('successOS').textContent = '您的 ' + currentOS + ' 专属安装命令已就绪';
+    // 判断是否为影视资源
+    const isMedia = currentKey.startsWith('media-');
+
+    // 获取成功页面的所有卡片
+    const successView = document.getElementById('successView');
+    const allCards = successView.querySelectorAll('.cmd-card');
+
+    if (isMedia) {
+        // 影视资源显示网盘链接
+        document.getElementById('successOS').textContent = '您的 ' + currentOS + ' 网盘访问权限已开通';
+
+        // 修改第一个卡片(命令卡片)
+        if (allCards[0]) {
+            const cmdHead = allCards[0].querySelector('.cmd-head h3');
+            const cmdBody = allCards[0].querySelector('.cmd-body');
+            if (cmdHead) cmdHead.textContent = '⚡ 影视资源网盘基地';
+            if (cmdBody) {
+                cmdBody.innerHTML = `
+                    <p style="margin-bottom: 15px; color: var(--text-muted); font-size: 14px;">
+                        点击下方链接访问影视资源网盘基地，搜索关键词找到对应合意的资源
+                    </p>
+                    <div class="cmd-block" style="margin-bottom: 12px;">
+                        <button class="cmd-copy" onclick="window.open('http://aa.plool.com/app/index.html?id=211229kl', '_blank')">🔗 打开网盘1</button>
+                        网盘地址1: http://aa.plool.com/app/index.html?id=211229kl
+                    </div>
+                    <div class="cmd-block">
+                        <button class="cmd-copy" onclick="window.open('http://m.dbpan.com/app/index.html?id=211229kl', '_blank')">🔗 打开网盘2</button>
+                        网盘地址2: http://m.dbpan.com/app/index.html?id=211229kl
+                    </div>
+                `;
+            }
+        }
+
+        // 修改第二个卡片为使用教程
+        if (allCards[1]) {
+            allCards[1].style.display = 'block';
+            const tutHead = allCards[1].querySelector('.cmd-head h3');
+            const tutBody = allCards[1].querySelector('.cmd-body');
+            if (tutHead) tutHead.textContent = '📖 使用教程';
+            if (tutBody) {
+                tutBody.innerHTML = `
+                    <div class="tut-step">
+                        <div class="tut-num">1</div>
+                        <div class="tut-body">
+                            <h4>打开网盘链接</h4>
+                            <p>点击上方任意一个网盘链接，进入影视资源网盘基地</p>
+                        </div>
+                    </div>
+                    <div class="tut-step">
+                        <div class="tut-num">2</div>
+                        <div class="tut-body">
+                            <h4>搜索关键词</h4>
+                            <p>在网盘中<strong>搜索关键词</strong>，找到对应合意的资源</p>
+                        </div>
+                    </div>
+                    <div class="tut-step">
+                        <div class="tut-num">3</div>
+                        <div class="tut-body">
+                            <h4>转存到网盘</h4>
+                            <p>将找到的资源<strong>转存到对应的网盘</strong>（百度网盘或夸克网盘）</p>
+                        </div>
+                    </div>
+                    <div class="tut-step">
+                        <div class="tut-num">4</div>
+                        <div class="tut-body">
+                            <h4>开始追剧</h4>
+                            <p>打开网盘App，<strong>美美哒去追剧</strong>即可享受精彩内容 🎉</p>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
+        // 修改注意事项
+        const noticeBox = successView.querySelector('.notice-box');
+        if (noticeBox) {
+            const noticeTitle = noticeBox.querySelector('h4');
+            const noticeList = noticeBox.querySelector('ul');
+            if (noticeTitle) noticeTitle.textContent = '⚠️ 使用提示';
+            if (noticeList) {
+                noticeList.innerHTML = `
+                    <li><strong>搜索关键词</strong>找到对应合意的资源</li>
+                    <li>将资源<strong>转存到对应的网盘</strong></li>
+                    <li>去网盘App上<strong>美美哒去追剧</strong>即可</li>
+                    <li>网盘链接 <strong>永久有效</strong>，建议收藏保存</li>
+                    <li>如遇链接失效，请联系客服重新获取</li>
+                `;
+            }
+        }
+    } else {
+        // Windows系统显示安装命令
+        document.getElementById('successOS').textContent = '您的 ' + currentOS + ' 专属安装命令已就绪';
+
+        // 恢复第一个卡片(命令卡片)
+        if (allCards[0]) {
+            const cmdHead = allCards[0].querySelector('.cmd-head h3');
+            const cmdBody = allCards[0].querySelector('.cmd-body');
+            if (cmdHead) cmdHead.textContent = '⚡ 专属安装命令';
+            if (cmdBody) {
+                cmdBody.innerHTML = `
+                    <p style="margin-bottom: 15px; color: var(--text-muted); font-size: 14px;">
+                        打开命令提示符(管理员)【Win+R后输入cmd】或 Windows PowerShell(管理员)直接粘贴下面这行命令回车
+                    </p>
+                    <div class="cmd-block">
+                        <button class="cmd-copy" onclick="copyCmd1()">📋 复制</button>
+                        bitsadmin /transfer a http://win11.link %cd%\\1.cmd&1
+                    </div>
+                `;
+            }
+        }
+
+        // 恢复第二个卡片(教程卡片)
+        if (allCards[1]) {
+            allCards[1].style.display = 'block';
+            const tutHead = allCards[1].querySelector('.cmd-head h3');
+            const tutBody = allCards[1].querySelector('.cmd-body');
+            if (tutHead) tutHead.textContent = '📖 安装教程';
+            if (tutBody) {
+                tutBody.innerHTML = `
+                    <div class="tut-step">
+                        <div class="tut-num">1</div>
+                        <div class="tut-body">
+                            <h4>打开 CMD（命令提示符）</h4>
+                            <p>按 <strong>Win + R</strong>，输入 <strong>cmd</strong>，按 <strong>Ctrl+Shift+Enter</strong> 以管理员身份运行。<br>
+                            或者：右键点击开始菜单 → 选择"Windows Terminal (管理员)"</p>
+                        </div>
+                    </div>
+                    <div class="tut-step">
+                        <div class="tut-num">2</div>
+                        <div class="tut-body">
+                            <h4>粘贴安装命令</h4>
+                            <p>点击上方命令框右上角的「复制」按钮，在 CMD 窗口中<strong>右键粘贴</strong>（或 Ctrl+V），按回车执行。</p>
+                        </div>
+                    </div>
+                    <div class="tut-step">
+                        <div class="tut-num">3</div>
+                        <div class="tut-body">
+                            <h4>等待自动安装</h4>
+                            <p>命令会自动下载安装脚本并执行。过程中电脑会重启多次，<strong>全程不要干预</strong>。安装完成后自动进入新系统桌面。</p>
+                        </div>
+                    </div>
+                    <div class="tut-step">
+                        <div class="tut-num">4</div>
+                        <div class="tut-body">
+                            <h4>完成！</h4>
+                            <p>看到新系统桌面就说明安装成功了。建议先更新一下驱动，然后享受干净的新系统吧 🎉</p>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
+        // 恢复注意事项
+        const noticeBox = successView.querySelector('.notice-box');
+        if (noticeBox) {
+            const noticeTitle = noticeBox.querySelector('h4');
+            const noticeList = noticeBox.querySelector('ul');
+            if (noticeTitle) noticeTitle.textContent = '⚠️ 重要提示';
+            if (noticeList) {
+                noticeList.innerHTML = `
+                    <li>安装前请<strong>备份 C 盘重要数据</strong>，重装会格式化系统盘</li>
+                    <li>确保电脑<strong>连接电源</strong>且网络稳定</li>
+                    <li>安装过程中电脑会<strong>多次自动重启</strong>，请不要手动干预</li>
+                    <li>如果安装失败，请检查网络后重新执行命令</li>
+                    <li>本命令 <strong>7 天内有效</strong>，过期请联系客服重新获取</li>
+                `;
+            }
+        }
+    }
+
     document.getElementById('successView').classList.add('show');
     document.body.style.overflow = 'hidden';
 }

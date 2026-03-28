@@ -91,6 +91,19 @@ a { color: var(--accent); text-decoration: none; }
 .pricing-card.popular .buy-btn { background: var(--accent); border-color: var(--accent); color: #fff; }
 .pricing-card.popular .buy-btn:hover { background: var(--accent-hover); box-shadow: 0 0 20px var(--accent-glow); }
 
+/* ===== Media Resources ===== */
+.media-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.media-card { position: relative; padding: 32px 24px; border-radius: var(--radius-lg); background: var(--bg-card); border: 1px solid var(--border); text-align: center; transition: all 0.3s; overflow: hidden; cursor: pointer; }
+.media-card.domestic { background: linear-gradient(180deg, rgba(239,68,68,0.25) 0%, rgba(239,68,68,0.08) 50%, var(--bg-card) 100%); border-color: rgba(239,68,68,0.5); box-shadow: 0 0 30px rgba(239,68,68,0.15); }
+.media-card.foreign { background: linear-gradient(180deg, rgba(168,85,247,0.25) 0%, rgba(168,85,247,0.08) 50%, var(--bg-card) 100%); border-color: rgba(168,85,247,0.5); box-shadow: 0 0 30px rgba(168,85,247,0.15); }
+.media-card.short { background: linear-gradient(180deg, rgba(34,211,238,0.25) 0%, rgba(34,211,238,0.08) 50%, var(--bg-card) 100%); border-color: rgba(34,211,238,0.5); box-shadow: 0 0 30px rgba(34,211,238,0.15); }
+.media-card:hover { border-color: var(--border-light); transform: translateY(-4px); }
+.media-card.popular { border-color: var(--accent); }
+.media-tag { font-size: 12px; color: var(--text-muted); margin-bottom: 12px; }
+.media-icon { font-size: 40px; margin-bottom: 12px; }
+.media-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 4px; }
+.media-desc { font-size: 13px; color: var(--text-muted); margin-bottom: 20px; }
+
 /* ===== Steps ===== */
 .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
 .step-card { text-align: center; }
@@ -189,12 +202,13 @@ a { color: var(--accent); text-decoration: none; }
     .hero-stats { justify-content: center; }
     .features-grid { grid-template-columns: repeat(2, 1fr); }
     .pricing-grid { grid-template-columns: repeat(2, 1fr); }
+    .media-grid { grid-template-columns: repeat(2, 1fr); }
     .footer-grid { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 640px) {
     .hero h1 { font-size: 32px; }
     .nav-links { display: none; }
-    .features-grid, .pricing-grid { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; }
+    .features-grid, .pricing-grid, .media-grid { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; }
     .steps-grid { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; }
     .footer-grid { grid-template-columns: 1fr; }
 }
