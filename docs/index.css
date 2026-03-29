@@ -104,6 +104,18 @@ a { color: var(--accent); text-decoration: none; }
 .media-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 4px; }
 .media-desc { font-size: 13px; color: var(--text-muted); margin-bottom: 20px; }
 
+/* ===== Startup Projects ===== */
+.startup-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.startup-card { position: relative; padding: 32px 24px; border-radius: var(--radius-lg); background: var(--bg-card); border: 1px solid var(--border); text-align: center; transition: all 0.3s; overflow: hidden; cursor: pointer; }
+.startup-card.project { background: linear-gradient(180deg, rgba(16,185,129,0.25) 0%, rgba(16,185,129,0.08) 50%, var(--bg-card) 100%); border-color: rgba(16,185,129,0.5); box-shadow: 0 0 30px rgba(16,185,129,0.15); }
+.startup-card.service { background: linear-gradient(180deg, rgba(251,146,60,0.25) 0%, rgba(251,146,60,0.08) 50%, var(--bg-card) 100%); border-color: rgba(251,146,60,0.5); box-shadow: 0 0 30px rgba(251,146,60,0.15); }
+.startup-card:hover { border-color: var(--border-light); transform: translateY(-4px); }
+.startup-card.popular { border-color: var(--accent); }
+.startup-tag { font-size: 12px; color: var(--text-muted); margin-bottom: 12px; }
+.startup-icon { font-size: 40px; margin-bottom: 12px; }
+.startup-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 4px; }
+.startup-desc { font-size: 13px; color: var(--text-muted); margin-bottom: 20px; }
+
 /* ===== Steps ===== */
 .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
 .step-card { text-align: center; }
@@ -203,12 +215,13 @@ a { color: var(--accent); text-decoration: none; }
     .features-grid { grid-template-columns: repeat(2, 1fr); }
     .pricing-grid { grid-template-columns: repeat(2, 1fr); }
     .media-grid { grid-template-columns: repeat(2, 1fr); }
+    .startup-grid { grid-template-columns: 1fr; }
     .footer-grid { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 640px) {
     .hero h1 { font-size: 32px; }
     .nav-links { display: none; }
-    .features-grid, .pricing-grid, .media-grid { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; }
+    .features-grid, .pricing-grid, .media-grid, .startup-grid { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; }
     .steps-grid { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; }
     .footer-grid { grid-template-columns: 1fr; }
 }

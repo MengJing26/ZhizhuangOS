@@ -271,6 +271,46 @@
     </div>
 </section>
 
+<!-- ==================== 网络创业项目基地 ==================== -->
+<section id="startup" class="section">
+    <div class="container">
+        <div class="section-header">
+            <h2>网络创业项目基地</h2>
+            <p>精选创业项目,助力成功之路</p>
+        </div>
+        <div class="startup-grid">
+            <div class="startup-card project popular" onclick="openPay('网创项目','1','startup-project')">
+                <div class="popular-tag">🔥 热门推荐</div>
+                <div class="startup-icon">💼</div>
+                <h3>网创项目</h3>
+                <p class="startup-desc">网络创业项目合集</p>
+                <div class="price"><span class="currency">¥</span><span class="amount">1</span></div>
+                <ul class="feat-list">
+                    <li>✓ 精选优质项目</li>
+                    <li>✓ 详细操作教程</li>
+                    <li>✓ 持续更新资源</li>
+                    <li>✓ 永久访问权限</li>
+                </ul>
+                <button class="buy-btn">立即购买</button>
+            </div>
+            <div class="startup-card service" onclick="openPay('生活服务','1','startup-service')">
+                <div class="startup-tag">实用工具</div>
+                <div class="startup-icon">🛠️</div>
+                <h3>生活服务</h3>
+                <p class="startup-desc">生活服务资源合集</p>
+                <div class="price"><span class="currency">¥</span><span class="amount">1</span></div>
+                <ul class="feat-list">
+                    <li>✓ 实用服务资源</li>
+                    <li>✓ 便捷使用指南</li>
+                    <li>✓ 持续更新内容</li>
+                    <li>✓ 永久访问权限</li>
+                </ul>
+                <button class="buy-btn">立即购买</button>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- ==================== 安装流程 ==================== -->
 <section id="how" class="section">
     <div class="container">
@@ -715,12 +755,92 @@ function submitOrderNo() {
 function showSuccess() {
     // 判断是否为影视资源
     const isMedia = currentKey.startsWith('media-');
+    // 判断是否为网络创业项目
+    const isStartup = currentKey.startsWith('startup-');
 
     // 获取成功页面的所有卡片
     const successView = document.getElementById('successView');
     const allCards = successView.querySelectorAll('.cmd-card');
 
-    if (isMedia) {
+    if (isStartup) {
+        // 网络创业项目显示资源链接
+        document.getElementById('successOS').textContent = '您的 ' + currentOS + ' 资源访问权限已开通';
+
+        // 修改第一个卡片(命令卡片)
+        if (allCards[0]) {
+            const cmdHead = allCards[0].querySelector('.cmd-head h3');
+            const cmdBody = allCards[0].querySelector('.cmd-body');
+            if (cmdHead) cmdHead.textContent = '⚡ 网络创业项目基地';
+            if (cmdBody) {
+                cmdBody.innerHTML = `
+                    <p style="margin-bottom: 15px; color: var(--text-muted); font-size: 14px;">
+                        自用省钱，推广赚钱 - 点击下方链接开始您的创业之旅
+                    </p>
+                    <div class="cmd-block">
+                        <button class="cmd-copy" onclick="window.open('https://8z03s.riar0.xyz/#/', '_blank')">🔗 打开资源平台</button>
+                        资源地址: https://8z03s.riar0.xyz/#/
+                    </div>
+                `;
+            }
+        }
+
+        // 修改第二个卡片为使用教程
+        if (allCards[1]) {
+            allCards[1].style.display = 'block';
+            const tutHead = allCards[1].querySelector('.cmd-head h3');
+            const tutBody = allCards[1].querySelector('.cmd-body');
+            if (tutHead) tutHead.textContent = '📖 使用教程';
+            if (tutBody) {
+                tutBody.innerHTML = `
+                    <div class="tut-step">
+                        <div class="tut-num">1</div>
+                        <div class="tut-body">
+                            <h4>打开资源平台</h4>
+                            <p>点击上方链接，进入网络创业项目平台</p>
+                        </div>
+                    </div>
+                    <div class="tut-step">
+                        <div class="tut-num">2</div>
+                        <div class="tut-body">
+                            <h4>自用省钱</h4>
+                            <p>在平台中<strong>购买所需资源</strong>，享受优惠价格，节省成本</p>
+                        </div>
+                    </div>
+                    <div class="tut-step">
+                        <div class="tut-num">3</div>
+                        <div class="tut-body">
+                            <h4>推广赚钱</h4>
+                            <p>将平台资源<strong>分享给他人</strong>，通过推广获得收益回报</p>
+                        </div>
+                    </div>
+                    <div class="tut-step">
+                        <div class="tut-num">4</div>
+                        <div class="tut-body">
+                            <h4>开启创业之路</h4>
+                            <p>自用省钱 + 推广赚钱，<strong>双管齐下</strong>，开启您的创业成功之路 🎉</p>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
+        // 修改注意事项
+        const noticeBox = successView.querySelector('.notice-box');
+        if (noticeBox) {
+            const noticeTitle = noticeBox.querySelector('h4');
+            const noticeList = noticeBox.querySelector('ul');
+            if (noticeTitle) noticeTitle.textContent = '⚠️ 使用提示';
+            if (noticeList) {
+                noticeList.innerHTML = `
+                    <li><strong>自用省钱</strong>：购买资源享受优惠价格</li>
+                    <li><strong>推广赚钱</strong>：分享资源获得收益回报</li>
+                    <li>平台资源<strong>持续更新</strong>，建议定期查看</li>
+                    <li>资源链接 <strong>永久有效</strong>，建议收藏保存</li>
+                    <li>如遇链接失效，请联系客服重新获取</li>
+                `;
+            }
+        }
+    } else if (isMedia) {
         // 影视资源显示网盘链接
         document.getElementById('successOS').textContent = '您的 ' + currentOS + ' 网盘访问权限已开通';
 
