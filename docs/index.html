@@ -65,7 +65,7 @@
                 <h1 id="hero-title">告别繁琐<br>一键装机</h1>
                 <p class="hero-sub">
                     无需U盘，无需技术基础<br>
-                    CMD 命令行全自动重装系统，AI 全程保驾护航
+                    CMD命令行全自动重装，AI 全程护航
                 </p>
                 <div class="hero-stats">
                     <div class="stat"><span class="stat-number">0</span><span class="stat-label">人工干预</span></div>
@@ -77,29 +77,19 @@
                 </button>
             </div>
             <div class="hero-visual" aria-hidden="true">
-                <div class="float-card">
-                    <div class="card-header">
-                        <span class="status-dot"></span>
-                        <span>AI 正在为您准备系统...</span>
-                    </div>
-                    <div class="progress-bar"><div class="progress-fill"></div></div>
-                    <div class="card-details">
-                        <div class="detail-item ok">✓ 系统环境检测完成</div>
-                        <div class="detail-item ok">✓ 硬件兼容性验证通过</div>
-                        <div class="detail-item ok">✓ 网络连接状态正常</div>
-                        <div class="detail-item ok">✓ 磁盘空间检测通过</div>
-                        <div class="detail-item ok">✓ 安装命令已生成</div>
-                        <div class="detail-item ok">✓ 系统镜像已就绪</div>
-                        <div class="detail-item active">⟳ 等待支付确认...</div>
-                    </div>
-                    <div class="card-footer" style="margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,0.1);font-size:12px;color:var(--text-muted);">
-                        <div style="display:flex;justify-content:space-between;margin-bottom:6px;">
-                            <span>预计安装时间</span>
-                            <span style="color:var(--accent);">15-45分钟</span>
+                <div class="hero-visual-wrapper">
+                    <div class="hero-side-buttons">
+                        <div class="button-group">
+                            <p class="button-desc">海量影视，一键获取</p>
+                            <button class="quick-link-btn media-btn" onclick="document.getElementById('media').scrollIntoView({behavior:'smooth'})">
+                                🎬 影视资源网盘基地
+                            </button>
                         </div>
-                        <div style="display:flex;justify-content:space-between;">
-                            <span>服务状态</span>
-                            <span style="color:#4ade80;">● 在线运行中</span>
+                        <div class="button-group">
+                            <p class="button-desc">创业项目，助力成功</p>
+                            <button class="quick-link-btn startup-btn" onclick="document.getElementById('startup').scrollIntoView({behavior:'smooth'})">
+                                💼 网络创业项目基地
+                            </button>
                         </div>
                     </div>
                 </div>
