@@ -103,6 +103,14 @@
             
             <div class="hero-visual">
                 <div class="quick-access-cards">
+                    <div class="quick-card lobster-card" onclick="document.getElementById('lobster').scrollIntoView({behavior:'smooth'})">
+                        <div class="quick-card-icon">🦞</div>
+                        <div class="quick-card-content">
+                            <h3>OpenClaw龙虾社区</h3>
+                            <p>优质U盘，品质之选</p>
+                        </div>
+                        <div class="quick-card-arrow">→</div>
+                    </div>
                     <div class="quick-card media-card" onclick="document.getElementById('media').scrollIntoView({behavior:'smooth'})">
                         <div class="quick-card-icon">🎬</div>
                         <div class="quick-card-content">
@@ -222,14 +230,14 @@
                     <p>海量影视资源，一键获取</p>
                 </div>
                 <div class="service-grid">
-                    <div class="service-card media-short-card" onclick="openPay('短剧漫剧AI剧','0.1','media-short')">
+                    <div class="service-card media-short-card" onclick="openPay('短剧漫剧AI剧','0.88','media-short')">
                         <div class="service-badge">新兴潮流</div>
                         <div class="service-icon">📱</div>
                         <h4>短剧漫剧AI剧</h4>
                         <p class="service-desc">短视频剧、AI生成剧</p>
                         <div class="service-price">
                             <span class="price-currency">¥</span>
-                            <span class="price-value">0.1</span>
+                            <span class="price-value">0.88</span>
                         </div>
                         <ul class="service-features">
                             <li>✓ 精选内容</li>
@@ -275,6 +283,24 @@
                         </ul>
                         <button class="btn-buy">立即购买</button>
                     </div>
+                    
+                    <div class="service-card media-global-card" onclick="openPay('全球高清影视','0.58','media-global')">
+                        <div class="service-badge">免费福利</div>
+                        <div class="service-icon">🌍</div>
+                        <h4>全球高清影视</h4>
+                        <p class="service-desc">全球影视，免费观看</p>
+                        <div class="service-price">
+                            <span class="price-currency">¥</span>
+                            <span class="price-value">0.58</span>
+                        </div>
+                        <ul class="service-features">
+                            <li>✓ 全球影视资源</li>
+                            <li>✓ 高清画质</li>
+                            <li>✓ 多语言字幕</li>
+                            <li>✓ 免费观看</li>
+                        </ul>
+                        <button class="btn-buy">立即获取</button>
+                    </div>
                 </div>
             </div>
             
@@ -317,6 +343,70 @@
                             <li>✓ 精选优质项目</li>
                             <li>✓ 详细操作教程</li>
                             <li>✓ 持续更新资源</li>
+                            <li>✓ 永久访问权限</li>
+                        </ul>
+                        <button class="btn-buy">立即购买</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- OpenClaw龙虾社区 -->
+            <div id="lobster" class="service-category">
+                <div class="category-header">
+                    <div class="category-icon">🦞</div>
+                    <h3>OpenClaw龙虾社区</h3>
+                    <p>优质U盘资源，满足不同需求</p>
+                </div>
+                <div class="service-grid">
+                    <div class="service-card lobster-basic-card" onclick="openPay('龙虾U盘资源包','8.8','lobster-basic')">
+                        <div class="service-badge">入门之选</div>
+                        <div class="service-icon">📦</div>
+                        <h4>龙虾U盘资源包</h4>
+                        <p class="service-desc">基础资源，经济实惠</p>
+                        <div class="service-price">
+                            <span class="price-currency">¥</span>
+                            <span class="price-value">8.8</span>
+                        </div>
+                        <ul class="service-features">
+                            <li>✓ 基础资源包</li>
+                            <li>✓ 经济实惠</li>
+                            <li>✓ 持续更新</li>
+                            <li>✓ 永久访问权限</li>
+                        </ul>
+                        <button class="btn-buy">立即购买</button>
+                    </div>
+                    
+                    <div class="service-card lobster-pure-card popular" onclick="openPay('高速纯龙虾U盘','33','lobster-pure')">
+                        <div class="popular-badge">🔥 最受欢迎</div>
+                        <div class="service-icon">⚡</div>
+                        <h4>高速纯龙虾U盘</h4>
+                        <p class="service-desc">高速纯净，品质之选</p>
+                        <div class="service-price">
+                            <span class="price-currency">¥</span>
+                            <span class="price-value">33</span>
+                        </div>
+                        <ul class="service-features">
+                            <li>✓ 高速传输</li>
+                            <li>✓ 纯净资源</li>
+                            <li>✓ 品质保障</li>
+                            <li>✓ 永久访问权限</li>
+                        </ul>
+                        <button class="btn-buy">立即购买</button>
+                    </div>
+                    
+                    <div class="service-card lobster-mix-card" onclick="openPay('系统混龙虾U盘','58','lobster-mix')">
+                        <div class="service-badge">豪华套餐</div>
+                        <div class="service-icon">🎁</div>
+                        <h4>系统混龙虾U盘</h4>
+                        <p class="service-desc">系统整合，豪华配置</p>
+                        <div class="service-price">
+                            <span class="price-currency">¥</span>
+                            <span class="price-value">58</span>
+                        </div>
+                        <ul class="service-features">
+                            <li>✓ 系统整合</li>
+                            <li>✓ 豪华配置</li>
+                            <li>✓ 全面覆盖</li>
                             <li>✓ 永久访问权限</li>
                         </ul>
                         <button class="btn-buy">立即购买</button>
@@ -607,9 +697,9 @@
 
 <!-- ==================== 订单号输入弹窗 ==================== -->
 <div class="modal-overlay" id="orderNoModal">
-    <div class="modal-container small">
+    <div class="modal-container">
         <div class="modal-header">
-            <h3>📝 请输入支付订单号</h3>
+            <h3>📝 请填写订单信息</h3>
             <button class="modal-close" onclick="closeOrderNoModal()">&times;</button>
         </div>
         <div class="modal-body">
@@ -617,8 +707,17 @@
                 请输入您支付成功后显示的订单号，用于核实支付情况
             </p>
             <input type="text" id="orderNoInput" placeholder="请输入支付订单号" class="order-input">
+            
+            <!-- 收货地址输入区域（默认隐藏） -->
+            <div id="addressSection" style="display: none; margin-top: 16px;">
+                <p class="input-hint">
+                    请填写详细的收货地址，我们将为您邮寄U盘
+                </p>
+                <textarea id="addressInput" placeholder="请输入详细收货地址（包括：姓名、电话、省市区、详细地址）" class="order-input" style="min-height: 100px; resize: vertical;"></textarea>
+            </div>
+            
             <button class="btn-confirm" onclick="submitOrderNo()">
-                ✓ 提交订单号
+                ✓ 提交订单信息
             </button>
         </div>
     </div>
@@ -802,6 +901,19 @@ function updateTimerDisplay() {
 function confirmPay() {
     // 显示订单号输入弹窗
     document.getElementById('orderNoInput').value = '';
+    
+    // 判断是否为需要邮寄的龙虾U盘产品（高速纯龙虾U盘或系统混龙虾U盘）
+    const needAddress = (currentKey === 'lobster-pure' || currentKey === 'lobster-mix');
+    
+    // 显示或隐藏收货地址输入框
+    const addressSection = document.getElementById('addressSection');
+    if (needAddress) {
+        addressSection.style.display = 'block';
+        document.getElementById('addressInput').value = '';
+    } else {
+        addressSection.style.display = 'none';
+    }
+    
     document.getElementById('orderNoModal').classList.add('show');
 }
 
@@ -814,9 +926,25 @@ function closeOrderNoModal() {
 function submitOrderNo() {
     const payOrderNo = document.getElementById('orderNoInput').value.trim();
     
-    // 未填写
+    // 未填写订单号
     if (!payOrderNo) {
         showToast('请填写支付订单号');
+        return;
+    }
+    
+    // 判断是否需要收货地址
+    const needAddress = (currentKey === 'lobster-pure' || currentKey === 'lobster-mix');
+    const address = document.getElementById('addressInput').value.trim();
+    
+    // 如果需要收货地址但未填写
+    if (needAddress && !address) {
+        showToast('请填写收货地址');
+        return;
+    }
+    
+    // 检查倒计时是否已经过去至少10秒（剩余时间不超过290秒，即04:50）
+    if (timerSeconds > 290) {
+        showToast('请再次确认支付信息全部正确再提交');
         return;
     }
     
@@ -833,6 +961,11 @@ function submitOrderNo() {
         btn.innerHTML = '✓ 核实通过！正在生成命令...';
 
         setTimeout(() => {
+            // 如果是需要邮寄的产品，发送订单信息到订单管理页面
+            if (needAddress) {
+                sendOrderToManagement(currentOS, currentPrice, address);
+            }
+            
             closePay();
             showSuccess();
             btn.disabled = false;
@@ -841,18 +974,246 @@ function submitOrderNo() {
     }, 2000);
 }
 
+// ===== 发送订单信息到订单管理页面 =====
+function sendOrderToManagement(productName, price, address) {
+    // 直接将订单数据存储到localStorage，供管理员在订单管理页面查看
+    const ORDERS_KEY = 'openclaw_orders';
+    const SEQUENCE_KEY = 'openclaw_sequence';
+    const LAST_DATE_KEY = 'openclaw_last_date';
+    
+    // 获取当前日期字符串
+    const now = new Date();
+    const currentDate = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+    
+    // 获取序列号
+    const lastDate = localStorage.getItem(LAST_DATE_KEY);
+    let sequence;
+    
+    // 如果是新的一天，重置序列号
+    if (lastDate !== currentDate) {
+        localStorage.setItem(LAST_DATE_KEY, currentDate);
+        localStorage.setItem(SEQUENCE_KEY, '1');
+        sequence = 1;
+    } else {
+        // 否则递增序列号
+        sequence = parseInt(localStorage.getItem(SEQUENCE_KEY) || '0') + 1;
+        localStorage.setItem(SEQUENCE_KEY, sequence.toString());
+    }
+    
+    // 获取现有订单
+    const ordersStr = localStorage.getItem(ORDERS_KEY);
+    const orders = ordersStr ? JSON.parse(ordersStr) : [];
+    
+    // 创建新订单
+    const newOrder = {
+        id: Date.now(),
+        sequence: sequence,
+        orderNo: `ORD${currentDate.replace(/-/g, '')}${String(sequence).padStart(4, '0')}`,
+        productName: productName,
+        price: price,
+        address: address,
+        status: 'pending',
+        createTime: new Date().toISOString(),
+        date: currentDate
+    };
+    
+    // 添加到订单列表开头
+    orders.unshift(newOrder);
+    
+    // 保存到localStorage
+    localStorage.setItem(ORDERS_KEY, JSON.stringify(orders));
+    
+    console.log('订单已保存:', newOrder);
+}
+
 // ===== 成功交付页 =====
 function showSuccess() {
     // 判断是否为影视资源
     const isMedia = currentKey.startsWith('media-');
     // 判断是否为网络创业项目
     const isStartup = currentKey.startsWith('startup-');
+    // 判断是否为龙虾U盘资源包（网盘链接）
+    const isLobsterBasic = (currentKey === 'lobster-basic');
+    // 判断是否为需要邮寄的龙虾U盘产品
+    const isLobsterPhysical = (currentKey === 'lobster-pure' || currentKey === 'lobster-mix');
 
     // 获取成功页面的所有卡片
     const successView = document.getElementById('successView');
     const allCards = successView.querySelectorAll('.command-card');
 
-    if (isStartup) {
+    if (isLobsterPhysical) {
+        // 需要邮寄的龙虾U盘产品
+        document.getElementById('successOS').textContent = '您的 ' + currentOS + ' 订单已提交成功';
+
+        // 获取客户填写的收货地址
+        const customerAddress = document.getElementById('addressInput').value.trim();
+
+        // 修改第一个卡片(命令卡片)
+        if (allCards[0]) {
+            const cmdHead = allCards[0].querySelector('.command-header h3');
+            const cmdBody = allCards[0].querySelector('.command-body');
+            if (cmdHead) cmdHead.textContent = '⚡ 订单提交成功';
+            if (cmdBody) {
+                cmdBody.innerHTML = `
+                    <p class="command-hint">
+                        您的订单已成功提交，我们将在1-3个工作日内为您发货
+                    </p>
+                    <div class="command-block" style="margin-bottom: 12px;">
+                        <p style="margin: 0; color: #00d4ff;"><strong>📦 商品信息</strong></p>
+                        <p style="margin: 8px 0 0 0;">商品名称：${currentOS}</p>
+                        <p style="margin: 8px 0 0 0;">订单金额：¥${currentPrice}</p>
+                    </div>
+                    <div class="command-block">
+                        <p style="margin: 0; color: #00d4ff;"><strong>📍 收货信息</strong></p>
+                        <p style="margin: 8px 0 0 0; white-space: pre-wrap;">${customerAddress}</p>
+                    </div>
+                `;
+            }
+        }
+
+        // 修改第二个卡片为发货说明
+        if (allCards[1]) {
+            allCards[1].style.display = 'block';
+            const tutHead = allCards[1].querySelector('.command-header h3');
+            const tutBody = allCards[1].querySelector('.command-body');
+            if (tutHead) tutHead.textContent = '📖 发货流程';
+            if (tutBody) {
+                tutBody.innerHTML = `
+                    <div class="tutorial-step">
+                        <div class="tutorial-number">1</div>
+                        <div class="tutorial-content">
+                            <h4>订单确认</h4>
+                            <p>我们已收到您的订单信息和收货地址，正在为您准备商品</p>
+                        </div>
+                    </div>
+                    <div class="tutorial-step">
+                        <div class="tutorial-number">2</div>
+                        <div class="tutorial-content">
+                            <h4>商品打包</h4>
+                            <p>工作人员将为您<strong>精心打包U盘</strong>，确保商品完好无损</p>
+                        </div>
+                    </div>
+                    <div class="tutorial-step">
+                        <div class="tutorial-number">3</div>
+                        <div class="tutorial-content">
+                            <h4>快递发货</h4>
+                            <p>商品将通过<strong>快递邮寄</strong>至您填写的收货地址</p>
+                        </div>
+                    </div>
+                    <div class="tutorial-step">
+                        <div class="tutorial-number">4</div>
+                        <div class="tutorial-content">
+                            <h4>签收使用</h4>
+                            <p>收到U盘后，<strong>插入电脑即可使用</strong>，享受高速便捷体验 🎉</p>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
+        // 修改注意事项
+        const noticeBox = successView.querySelector('.notice-card');
+        if (noticeBox) {
+            const noticeTitle = noticeBox.querySelector('h4');
+            const noticeList = noticeBox.querySelector('ul');
+            if (noticeTitle) noticeTitle.textContent = '⚠️ 重要提示';
+            if (noticeList) {
+                noticeList.innerHTML = `
+                    <li>发货时间：<strong>1-3个工作日</strong>，请耐心等待</li>
+                    <li>快递方式：默认使用<strong>三通一达、极兔、邮政</strong>等快递</li>
+                    <li>收货地址：请确保您填写的收货地址<strong>准确无误</strong></li>
+                    <li>物流查询：发货后我们将通过短信或邮件通知您<strong>快递单号</strong></li>
+                    <li>如有疑问，请联系客服：QQ: 1025466935 | 微信: imitao520</li>
+                `;
+            }
+        }
+    } else if (isLobsterBasic) {
+        // 龙虾U盘资源显示网盘链接
+        document.getElementById('successOS').textContent = '您的 ' + currentOS + ' 访问权限已开通';
+
+        // 修改第一个卡片(命令卡片)
+        if (allCards[0]) {
+            const cmdHead = allCards[0].querySelector('.command-header h3');
+            const cmdBody = allCards[0].querySelector('.command-body');
+            if (cmdHead) cmdHead.textContent = '⚡ 虾盘U-claw';
+            if (cmdBody) {
+                cmdBody.innerHTML = `
+                    <p class="command-hint">
+                        点击下方链接访问虾盘资源，支持多种网盘
+                    </p>
+                    <div class="command-block" style="margin-bottom: 12px;">
+                        <button class="command-copy-btn" onclick="window.open('https://pan.baidu.com/s/1sj-jbGjL9xr6mPTvGQS0tw?pwd=gf5f', '_blank')">🔗 打开百度网盘</button>
+                        百度网盘: https://pan.baidu.com/s/1sj-jbGjL9xr6mPTvGQS0tw?pwd=gf5f 提取码: gf5f
+                    </div>
+                    <div class="command-block" style="margin-bottom: 12px;">
+                        <button class="command-copy-btn" onclick="window.open('https://pan.xunlei.com/s/VOpbk6IG4taHwZ-gAYI_SHayA1?pwd=9vs5', '_blank')">🔗 打开迅雷网盘</button>
+                        迅雷网盘: https://pan.xunlei.com/s/VOpbk6IG4taHwZ-gAYI_SHayA1?pwd=9vs5
+                    </div>
+                    <div class="command-block">
+                        <button class="command-copy-btn" onclick="window.open('https://pan.quark.cn/s/07d114cdfbf2', '_blank')">🔗 打开夸克网盘</button>
+                        夸克网盘: https://pan.quark.cn/s/07d114cdfbf2
+                    </div>
+                `;
+            }
+        }
+
+        // 修改第二个卡片为使用教程
+        if (allCards[1]) {
+            allCards[1].style.display = 'block';
+            const tutHead = allCards[1].querySelector('.command-header h3');
+            const tutBody = allCards[1].querySelector('.command-body');
+            if (tutHead) tutHead.textContent = '📖 使用教程';
+            if (tutBody) {
+                tutBody.innerHTML = `
+                    <div class="tutorial-step">
+                        <div class="tutorial-number">1</div>
+                        <div class="tutorial-content">
+                            <h4>选择网盘</h4>
+                            <p>根据您的需求，选择<strong>百度网盘、迅雷网盘或夸克网盘</strong>中的任意一个</p>
+                        </div>
+                    </div>
+                    <div class="tutorial-step">
+                        <div class="tutorial-number">2</div>
+                        <div class="tutorial-content">
+                            <h4>打开链接</h4>
+                            <p>点击上方对应的<strong>网盘链接</strong>，跳转到虾盘资源页面</p>
+                        </div>
+                    </div>
+                    <div class="tutorial-step">
+                        <div class="tutorial-number">3</div>
+                        <div class="tutorial-content">
+                            <h4>输入提取码</h4>
+                            <p>如需提取码，<strong>输入对应的提取码</strong>（百度网盘: gf5f，迅雷网盘: 9vs5）</p>
+                        </div>
+                    </div>
+                    <div class="tutorial-step">
+                        <div class="tutorial-number">4</div>
+                        <div class="tutorial-content">
+                            <h4>转存下载</h4>
+                            <p>将资源<strong>转存到您的网盘</strong>，然后下载使用即可 🎉</p>
+                        </div>
+                    </div>
+                `;
+            }
+        }
+
+        // 修改注意事项
+        const noticeBox = successView.querySelector('.notice-card');
+        if (noticeBox) {
+            const noticeTitle = noticeBox.querySelector('h4');
+            const noticeList = noticeBox.querySelector('ul');
+            if (noticeTitle) noticeTitle.textContent = '⚠️ 使用提示';
+            if (noticeList) {
+                noticeList.innerHTML = `
+                    <li><strong>百度网盘</strong>提取码: gf5f</li>
+                    <li><strong>迅雷网盘</strong>提取码: 9vs5（复制链接后打开迅雷更方便）</li>
+                    <li><strong>夸克网盘</strong>无需提取码，直接访问</li>
+                    <li>网盘链接 <strong>永久有效</strong>，建议收藏保存</li>
+                    <li>如遇链接失效，请联系客服重新获取</li>
+                `;
+            }
+        }
+    } else if (isStartup) {
         // 网络创业项目显示资源链接
         document.getElementById('successOS').textContent = '您的 ' + currentOS + ' 资源访问权限已开通';
 
@@ -931,85 +1292,168 @@ function showSuccess() {
             }
         }
     } else if (isMedia) {
-        // 影视资源显示网盘链接
-        document.getElementById('successOS').textContent = '您的 ' + currentOS + ' 网盘访问权限已开通';
+        // 判断是否为全球高清影视
+        const isMediaGlobal = (currentKey === 'media-global');
+        
+        if (isMediaGlobal) {
+            // 全球高清影视显示一起看App链接
+            document.getElementById('successOS').textContent = '您的 ' + currentOS + ' 访问权限已开通';
 
-        // 修改第一个卡片(命令卡片)
-        if (allCards[0]) {
-            const cmdHead = allCards[0].querySelector('.command-header h3');
-            const cmdBody = allCards[0].querySelector('.command-body');
-            if (cmdHead) cmdHead.textContent = '⚡ 影视资源网盘基地';
-            if (cmdBody) {
-                cmdBody.innerHTML = `
-                    <p class="command-hint">
-                        点击下方链接访问影视资源网盘基地，搜索关键词找到对应合意的资源
-                    </p>
-                    <div class="command-block" style="margin-bottom: 12px;">
-                        <button class="command-copy-btn" onclick="window.open('http://aa.plool.com/app/index.html?id=211229kl', '_blank')">🔗 打开网盘1</button>
-                        网盘地址1: http://aa.plool.com/app/index.html?id=211229kl
-                    </div>
-                    <div class="command-block">
-                        <button class="command-copy-btn" onclick="window.open('http://m.dbpan.com/app/index.html?id=211229kl', '_blank')">🔗 打开网盘2</button>
-                        网盘地址2: http://m.dbpan.com/app/index.html?id=211229kl
-                    </div>
-                `;
+            // 修改第一个卡片(命令卡片)
+            if (allCards[0]) {
+                const cmdHead = allCards[0].querySelector('.command-header h3');
+                const cmdBody = allCards[0].querySelector('.command-body');
+                if (cmdHead) cmdHead.textContent = '⚡ 全球高清影视资源免费看';
+                if (cmdBody) {
+                    cmdBody.innerHTML = `
+                        <p class="command-hint">
+                            点击下方链接下载一起看App，畅享全球高清影视
+                        </p>
+                        <div class="command-block">
+                            <button class="command-copy-btn" onclick="window.open('https://m.yqkxma.com/dl/index.html', '_blank')">🔗 打开下载页面</button>
+                            一起看App: https://m.yqkxma.com/dl/index.html
+                        </div>
+                    `;
+                }
             }
-        }
 
-        // 修改第二个卡片为使用教程
-        if (allCards[1]) {
-            allCards[1].style.display = 'block';
-            const tutHead = allCards[1].querySelector('.command-header h3');
-            const tutBody = allCards[1].querySelector('.command-body');
-            if (tutHead) tutHead.textContent = '📖 使用教程';
-            if (tutBody) {
-                tutBody.innerHTML = `
-                    <div class="tutorial-step">
-                        <div class="tutorial-number">1</div>
-                        <div class="tutorial-content">
-                            <h4>打开网盘链接</h4>
-                            <p>点击上方任意一个网盘链接，进入影视资源网盘基地</p>
+            // 修改第二个卡片为使用教程
+            if (allCards[1]) {
+                allCards[1].style.display = 'block';
+                const tutHead = allCards[1].querySelector('.command-header h3');
+                const tutBody = allCards[1].querySelector('.command-body');
+                if (tutHead) tutHead.textContent = '📖 使用教程';
+                if (tutBody) {
+                    tutBody.innerHTML = `
+                        <div class="tutorial-step">
+                            <div class="tutorial-number">1</div>
+                            <div class="tutorial-content">
+                                <h4>打开下载页面</h4>
+                                <p>点击上方链接，进入<strong>一起看App下载页面</strong></p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="tutorial-step">
-                        <div class="tutorial-number">2</div>
-                        <div class="tutorial-content">
-                            <h4>搜索关键词</h4>
-                            <p>在网盘中<strong>搜索关键词</strong>，找到对应合意的资源</p>
+                        <div class="tutorial-step">
+                            <div class="tutorial-number">2</div>
+                            <div class="tutorial-content">
+                                <h4>下载安装</h4>
+                                <p>根据您的设备<strong>下载对应版本</strong>（Android/iOS），完成安装</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="tutorial-step">
-                        <div class="tutorial-number">3</div>
-                        <div class="tutorial-content">
-                            <h4>转存到网盘</h4>
-                            <p>将找到的资源<strong>转存到对应的网盘</strong>（百度网盘或夸克网盘）</p>
+                        <div class="tutorial-step">
+                            <div class="tutorial-number">3</div>
+                            <div class="tutorial-content">
+                                <h4>注册登录</h4>
+                                <p>打开App，<strong>注册账号并登录</strong>，开始使用</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="tutorial-step">
-                        <div class="tutorial-number">4</div>
-                        <div class="tutorial-content">
-                            <h4>开始追剧</h4>
-                            <p>打开网盘App，<strong>美美哒去追剧</strong>即可享受精彩内容 🎉</p>
+                        <div class="tutorial-step">
+                            <div class="tutorial-number">4</div>
+                            <div class="tutorial-content">
+                                <h4>畅享影视</h4>
+                                <p>搜索您想看的影视内容，<strong>免费观看全球高清影视</strong> 🎉</p>
+                            </div>
                         </div>
-                    </div>
-                `;
+                    `;
+                }
             }
-        }
 
-        // 修改注意事项
-        const noticeBox = successView.querySelector('.notice-card');
-        if (noticeBox) {
-            const noticeTitle = noticeBox.querySelector('h4');
-            const noticeList = noticeBox.querySelector('ul');
-            if (noticeTitle) noticeTitle.textContent = '⚠️ 使用提示';
-            if (noticeList) {
-                noticeList.innerHTML = `
-                    <li><strong>搜索关键词</strong>找到对应合意的资源</li>
-                    <li>将资源<strong>转存到对应的网盘</strong></li>
-                    <li>去网盘App上<strong>美美哒去追剧</strong>即可</li>
-                    <li>网盘链接 <strong>永久有效</strong>，建议收藏保存</li>
-                    <li>如遇链接失效，请联系客服重新获取</li>
-                `;
+            // 修改注意事项
+            const noticeBox = successView.querySelector('.notice-card');
+            if (noticeBox) {
+                const noticeTitle = noticeBox.querySelector('h4');
+                const noticeList = noticeBox.querySelector('ul');
+                if (noticeTitle) noticeTitle.textContent = '⚠️ 使用提示';
+                if (noticeList) {
+                    noticeList.innerHTML = `
+                        <li>支持<strong>Android和iOS</strong>双平台</li>
+                        <li>全球影视资源<strong>免费观看</strong>，高清画质</li>
+                        <li>支持<strong>多语言字幕</strong>，满足不同需求</li>
+                        <li>App链接 <strong>永久有效</strong>，建议收藏保存</li>
+                        <li>如遇链接失效，请联系客服重新获取</li>
+                    `;
+                }
+            }
+        } else {
+            // 其他影视资源显示网盘链接
+            document.getElementById('successOS').textContent = '您的 ' + currentOS + ' 网盘访问权限已开通';
+
+            // 修改第一个卡片(命令卡片)
+            if (allCards[0]) {
+                const cmdHead = allCards[0].querySelector('.command-header h3');
+                const cmdBody = allCards[0].querySelector('.command-body');
+                if (cmdHead) cmdHead.textContent = '⚡ 影视资源网盘基地';
+                if (cmdBody) {
+                    cmdBody.innerHTML = `
+                        <p class="command-hint">
+                            点击下方链接访问影视资源网盘基地，搜索关键词找到对应合意的资源
+                        </p>
+                        <div class="command-block" style="margin-bottom: 12px;">
+                            <button class="command-copy-btn" onclick="window.open('http://aa.plool.com/app/index.html?id=211229kl', '_blank')">🔗 打开网盘1</button>
+                            网盘地址1: http://aa.plool.com/app/index.html?id=211229kl
+                        </div>
+                        <div class="command-block">
+                            <button class="command-copy-btn" onclick="window.open('http://m.dbpan.com/app/index.html?id=211229kl', '_blank')">🔗 打开网盘2</button>
+                            网盘地址2: http://m.dbpan.com/app/index.html?id=211229kl
+                        </div>
+                    `;
+                }
+            }
+
+            // 修改第二个卡片为使用教程
+            if (allCards[1]) {
+                allCards[1].style.display = 'block';
+                const tutHead = allCards[1].querySelector('.command-header h3');
+                const tutBody = allCards[1].querySelector('.command-body');
+                if (tutHead) tutHead.textContent = '📖 使用教程';
+                if (tutBody) {
+                    tutBody.innerHTML = `
+                        <div class="tutorial-step">
+                            <div class="tutorial-number">1</div>
+                            <div class="tutorial-content">
+                                <h4>打开网盘链接</h4>
+                                <p>点击上方任意一个网盘链接，进入影视资源网盘基地</p>
+                            </div>
+                        </div>
+                        <div class="tutorial-step">
+                            <div class="tutorial-number">2</div>
+                            <div class="tutorial-content">
+                                <h4>搜索关键词</h4>
+                                <p>在网盘中<strong>搜索关键词</strong>，找到对应合意的资源</p>
+                            </div>
+                        </div>
+                        <div class="tutorial-step">
+                            <div class="tutorial-number">3</div>
+                            <div class="tutorial-content">
+                                <h4>转存到网盘</h4>
+                                <p>将找到的资源<strong>转存到对应的网盘</strong>（百度网盘或夸克网盘）</p>
+                            </div>
+                        </div>
+                        <div class="tutorial-step">
+                            <div class="tutorial-number">4</div>
+                            <div class="tutorial-content">
+                                <h4>开始追剧</h4>
+                                <p>打开网盘App，<strong>美美哒去追剧</strong>即可享受精彩内容 🎉</p>
+                            </div>
+                        </div>
+                    `;
+                }
+            }
+
+            // 修改注意事项
+            const noticeBox = successView.querySelector('.notice-card');
+            if (noticeBox) {
+                const noticeTitle = noticeBox.querySelector('h4');
+                const noticeList = noticeBox.querySelector('ul');
+                if (noticeTitle) noticeTitle.textContent = '⚠️ 使用提示';
+                if (noticeList) {
+                    noticeList.innerHTML = `
+                        <li><strong>搜索关键词</strong>找到对应合意的资源</li>
+                        <li>将资源<strong>转存到对应的网盘</strong></li>
+                        <li>去网盘App上<strong>美美哒去追剧</strong>即可</li>
+                        <li>网盘链接 <strong>永久有效</strong>，建议收藏保存</li>
+                        <li>如遇链接失效，请联系客服重新获取</li>
+                    `;
+                }
             }
         }
     } else {

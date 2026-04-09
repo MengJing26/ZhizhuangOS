@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>订单管理系统 - OpenClaw龙虾社区</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+            color: #e0e0e0;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+        }
+        
+        .header h1 {
+            font-size: 32px;
+            color: #00d4ff;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            color: #888;
+            font-size: 14px;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .stat-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 36px;
+            color: #00d4ff;
+            font-weight: bold;
+        }
+        
+        .stat-label {
+            font-size: 14px;
+            color: #888;
+            margin-top: 5px;
+        }
+        
+        .filter-section {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        
+        .filter-section label {
+            color: #00d4ff;
+            font-weight: bold;
+        }
+        
+        .filter-section input, .filter-section select {
+            padding: 8px 15px;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 5px;
+            background: rgba(0, 0, 0, 0.5);
+            color: #e0e0e0;
+            font-size: 14px;
+        }
+        
+        .filter-section button {
+            padding: 8px 20px;
+            background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .filter-section button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3);
+        }
+        
+        .orders-table {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+        }
+        
+        .table-header {
+            display: grid;
+            grid-template-columns: 80px 120px 150px 100px 200px 1fr 150px 100px;
+            padding: 15px 20px;
+            background: rgba(0, 212, 255, 0.1);
+            font-weight: bold;
+            color: #00d4ff;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+        }
+        
+        .order-row {
+            display: grid;
+            grid-template-columns: 80px 120px 150px 100px 200px 1fr 150px 100px;
+            padding: 15px 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s;
+            align-items: start;
+        }
+        
+        .order-row:hover {
+            background: rgba(0, 212, 255, 0.05);
+        }
+        
+        .order-row.pending {
+            border-left: 3px solid #ffa500;
+        }
+        
+        .order-row.shipped {
+            border-left: 3px solid #00ff00;
+        }
+        
+        .order-row.completed {
+            border-left: 3px solid #00d4ff;
+        }
+        
+        .address-cell {
+            white-space: pre-wrap;
+            word-break: break-all;
+            line-height: 1.6;
+            max-width: 300px;
+            text-align: left;
+            padding: 0 10px;
+        }
+        
+        .status-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .status-pending {
+            background: rgba(255, 165, 0, 0.2);
+            color: #ffa500;
+        }
+        
+        .status-shipped {
+            background: rgba(0, 255, 0, 0.2);
+            color: #00ff00;
+        }
+        
+        .status-completed {
+            background: rgba(0, 212, 255, 0.2);
+            color: #00d4ff;
+        }
+        
+        .no-orders {
+            text-align: center;
+            padding: 50px;
+            color: #888;
+        }
+        
+        .action-btn {
+            padding: 5px 10px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 12px;
+            margin-right: 5px;
+            transition: all 0.3s;
+        }
+        
+        .btn-ship {
+            background: rgba(0, 255, 0, 0.2);
+            color: #00ff00;
+        }
+        
+        .btn-complete {
+            background: rgba(0, 212, 255, 0.2);
+            color: #00d4ff;
+        }
+        
+        .btn-delete {
+            background: rgba(255, 0, 0, 0.2);
+            color: #ff0000;
+        }
+        
+        .action-btn:hover {
+            transform: scale(1.05);
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            color: #888;
+        }
+        
+        .empty-state .icon {
+            font-size: 64px;
+            margin-bottom: 20px;
+        }
+        
+        @media (max-width: 1200px) {
+            .table-header, .order-row {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+            
+            .table-header > div, .order-row > div {
+                display: flex;
+                justify-content: space-between;
+            }
+            
+            .table-header > div::before {
+                content: attr(data-label);
+                color: #00d4ff;
+                font-weight: bold;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🦞 OpenClaw龙虾社区 - 订单管理系统</h1>
+            <p>实时订单监控与管理平台</p>
+        </div>
+        
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-value" id="totalOrders">0</div>
+                <div class="stat-label">今日总订单</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="pendingOrders">0</div>
+                <div class="stat-label">待发货</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="shippedOrders">0</div>
+                <div class="stat-label">已发货</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="completedOrders">0</div>
+                <div class="stat-label">已完成</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="totalAmount">¥0</div>
+                <div class="stat-label">今日销售额</div>
+            </div>
+        </div>
+        
+        <div class="filter-section">
+            <label>筛选：</label>
+            <input type="date" id="filterDate">
+            <select id="filterStatus">
+                <option value="">全部状态</option>
+                <option value="pending">待发货</option>
+                <option value="shipped">已发货</option>
+                <option value="completed">已完成</option>
+            </select>
+            <input type="text" id="filterKeyword" placeholder="搜索订单号/商品/地址">
+            <button onclick="filterOrders()">筛选</button>
+            <button onclick="resetFilters()">重置</button>
+            <button onclick="exportOrders()">导出数据</button>
+        </div>
+        
+        <div class="orders-table">
+            <div class="table-header">
+                <div data-label="序号">序号</div>
+                <div data-label="订单号">订单号</div>
+                <div data-label="商品名称">商品名称</div>
+                <div data-label="金额">金额</div>
+                <div data-label="提交时间">提交时间</div>
+                <div data-label="收货地址">收货地址</div>
+                <div data-label="状态">状态</div>
+                <div data-label="操作">操作</div>
+            </div>
+            <div id="ordersList">
+                <div class="empty-state">
+                    <div class="icon">📦</div>
+                    <p>暂无订单数据</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // 订单数据存储
+        const ORDERS_KEY = 'openclaw_orders';
+        const SEQUENCE_KEY = 'openclaw_sequence';
+        const LAST_DATE_KEY = 'openclaw_last_date';
+        
+        // 获取当前日期字符串
+        function getCurrentDate() {
+            const now = new Date();
+            return `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+        }
+        
+        // 获取序列号
+        function getSequenceNumber() {
+            const currentDate = getCurrentDate();
+            const lastDate = localStorage.getItem(LAST_DATE_KEY);
+            
+            // 如果是新的一天，重置序列号
+            if (lastDate !== currentDate) {
+                localStorage.setItem(LAST_DATE_KEY, currentDate);
+                localStorage.setItem(SEQUENCE_KEY, '1');
+                return 1;
+            }
+            
+            // 否则递增序列号
+            let sequence = parseInt(localStorage.getItem(SEQUENCE_KEY) || '0') + 1;
+            localStorage.setItem(SEQUENCE_KEY, sequence.toString());
+            return sequence;
+        }
+        
+        // 获取所有订单
+        function getAllOrders() {
+            const orders = localStorage.getItem(ORDERS_KEY);
+            return orders ? JSON.parse(orders) : [];
+        }
+        
+        // 保存订单
+        function saveOrders(orders) {
+            localStorage.setItem(ORDERS_KEY, JSON.stringify(orders));
+        }
+        
+        // 添加新订单
+        function addOrder(orderData) {
+            const orders = getAllOrders();
+            const sequence = getSequenceNumber();
+            const currentDate = getCurrentDate();
+            
+            const newOrder = {
+                id: Date.now(),
+                sequence: sequence,
+                orderNo: `ORD${currentDate.replace(/-/g, '')}${String(sequence).padStart(4, '0')}`,
+                productName: orderData.productName,
+                price: orderData.price,
+                address: orderData.address,
+                status: 'pending',
+                createTime: new Date().toISOString(),
+                date: currentDate
+            };
+            
+            orders.unshift(newOrder);
+            saveOrders(orders);
+            updateStats();
+            renderOrders();
+            
+            return newOrder;
+        }
+        
+        // 更新订单状态
+        function updateOrderStatus(orderId, status) {
+            const orders = getAllOrders();
+            const order = orders.find(o => o.id === orderId);
+            if (order) {
+                order.status = status;
+                saveOrders(orders);
+                updateStats();
+                renderOrders();
+            }
+        }
+        
+        // 删除订单
+        function deleteOrder(orderId) {
+            if (confirm('确定要删除这个订单吗？')) {
+                const orders = getAllOrders().filter(o => o.id !== orderId);
+                saveOrders(orders);
+                updateStats();
+                renderOrders();
+            }
+        }
+        
+        // 更新统计数据
+        function updateStats() {
+            const orders = getAllOrders();
+            const today = getCurrentDate();
+            const todayOrders = orders.filter(o => o.date === today);
+            
+            document.getElementById('totalOrders').textContent = todayOrders.length;
+            document.getElementById('pendingOrders').textContent = todayOrders.filter(o => o.status === 'pending').length;
+            document.getElementById('shippedOrders').textContent = todayOrders.filter(o => o.status === 'shipped').length;
+            document.getElementById('completedOrders').textContent = todayOrders.filter(o => o.status === 'completed').length;
+            
+            const totalAmount = todayOrders.reduce((sum, o) => sum + parseFloat(o.price), 0);
+            document.getElementById('totalAmount').textContent = '¥' + totalAmount.toFixed(1);
+        }
+        
+        // 渲染订单列表
+        function renderOrders(filteredOrders = null) {
+            const orders = filteredOrders || getAllOrders();
+            const container = document.getElementById('ordersList');
+            
+            if (orders.length === 0) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <div class="icon">📦</div>
+                        <p>暂无订单数据</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            container.innerHTML = orders.map(order => {
+                const statusClass = `status-${order.status}`;
+                const statusText = {
+                    'pending': '待发货',
+                    'shipped': '已发货',
+                    'completed': '已完成'
+                }[order.status];
+                
+                const rowClass = order.status;
+                
+                return `
+                    <div class="order-row ${rowClass}">
+                        <div>${order.sequence}</div>
+                        <div>${order.orderNo}</div>
+                        <div>${order.productName}</div>
+                        <div>¥${order.price}</div>
+                        <div>${new Date(order.createTime).toLocaleString('zh-CN')}</div>
+                        <div class="address-cell">${order.address}</div>
+                        <div><span class="status-badge ${statusClass}">${statusText}</span></div>
+                        <div>
+                            ${order.status === 'pending' ? `<button class="action-btn btn-ship" onclick="updateOrderStatus(${order.id}, 'shipped')">发货</button>` : ''}
+                            ${order.status === 'shipped' ? `<button class="action-btn btn-complete" onclick="updateOrderStatus(${order.id}, 'completed')">完成</button>` : ''}
+                            <button class="action-btn btn-delete" onclick="deleteOrder(${order.id})">删除</button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+        
+        // 筛选订单
+        function filterOrders() {
+            const date = document.getElementById('filterDate').value;
+            const status = document.getElementById('filterStatus').value;
+            const keyword = document.getElementById('filterKeyword').value.toLowerCase();
+            
+            let orders = getAllOrders();
+            
+            if (date) {
+                orders = orders.filter(o => o.date === date);
+            }
+            
+            if (status) {
+                orders = orders.filter(o => o.status === status);
+            }
+            
+            if (keyword) {
+                orders = orders.filter(o => 
+                    o.orderNo.toLowerCase().includes(keyword) ||
+                    o.productName.toLowerCase().includes(keyword) ||
+                    o.address.toLowerCase().includes(keyword)
+                );
+            }
+            
+            renderOrders(orders);
+        }
+        
+        // 重置筛选
+        function resetFilters() {
+            document.getElementById('filterDate').value = '';
+            document.getElementById('filterStatus').value = '';
+            document.getElementById('filterKeyword').value = '';
+            renderOrders();
+        }
+        
+        // 导出订单数据
+        function exportOrders() {
+            const orders = getAllOrders();
+            const csv = [
+                ['序号', '订单号', '商品名称', '金额', '提交时间', '收货地址', '状态'].join(','),
+                ...orders.map(o => [
+                    o.sequence,
+                    o.orderNo,
+                    o.productName,
+                    '¥' + o.price,
+                    new Date(o.createTime).toLocaleString('zh-CN'),
+                    `"${o.address.replace(/"/g, '""')}"`,
+                    { 'pending': '待发货', 'shipped': '已发货', 'completed': '已完成' }[o.status]
+                ].join(','))
+            ].join('\n');
+            
+            const blob = new Blob(['\ufeff' + csv], { type: 'text/csv;charset=utf-8;' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = `订单数据_${getCurrentDate()}.csv`;
+            link.click();
+        }
+        
+        // 监听来自主页面的消息
+        window.addEventListener('message', function(event) {
+            if (event.data.type === 'NEW_ORDER') {
+                const order = addOrder(event.data.orderData);
+                event.source.postMessage({ type: 'ORDER_CREATED', order: order }, '*');
+            }
+        });
+        
+        // 初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            updateStats();
+            renderOrders();
+            
+            // 设置默认日期为今天
+            document.getElementById('filterDate').value = getCurrentDate();
+        });
+    </script>
+</body>
+</html>
