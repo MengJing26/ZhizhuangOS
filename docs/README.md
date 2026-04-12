@@ -6,7 +6,7 @@
 
 **无需U盘 · CMD命令全自动安装 · AI全程护航**
 
-[在线演示](https://www.openclaw.cn) · [部署指南](DEPLOY.md) · [问题反馈](https://github.com/openclaw/os/issues)
+[在线演示](http://os.aiclawbox.com/)) · [部署指南](DEPLOY.md) · [问题反馈](https://github.com/openclaw/os/issues)
 
 </div>
 
@@ -119,7 +119,7 @@ openclaw-os/
 
 - **QQ**: 1025466935
 - **微信**: imitao520
-- **网站**: https://www.openclaw.cn
+- **网站**: http://os.aiclawbox.com/
 
 ## 📄 许可证
 
