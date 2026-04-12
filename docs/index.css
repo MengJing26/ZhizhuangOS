@@ -385,6 +385,161 @@ a:hover {
 }
 
 /* ==================== 服务产品区 ==================== */
+/* ==================== 返现活动广告横幅 ==================== */
+.promo-banner {
+    margin-bottom: 40px;
+    padding: 20px 30px;
+    background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 50%, #f39c12 100%);
+    border-radius: 16px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(255, 107, 107, 0.3),
+                0 0 60px rgba(255, 107, 107, 0.2);
+    animation: promoGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes promoGlow {
+    0% {
+        box-shadow: 0 8px 32px rgba(255, 107, 107, 0.3),
+                    0 0 60px rgba(255, 107, 107, 0.2);
+    }
+    100% {
+        box-shadow: 0 8px 32px rgba(255, 107, 107, 0.5),
+                    0 0 80px rgba(255, 107, 107, 0.4);
+    }
+}
+
+.promo-banner::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    animation: promoShine 3s linear infinite;
+}
+
+@keyframes promoShine {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.promo-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    position: relative;
+    z-index: 1;
+    flex-wrap: wrap;
+}
+
+.promo-icon {
+    font-size: 32px;
+    animation: promoBounce 1s ease-in-out infinite;
+}
+
+@keyframes promoBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.promo-text {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.promo-highlight {
+    font-size: 20px;
+    font-weight: 900;
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    letter-spacing: 1px;
+}
+
+.promo-desc {
+    font-size: 18px;
+    color: #fff;
+    font-weight: 500;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+
+.promo-desc strong {
+    font-weight: 900;
+    color: #ffeaa7;
+    font-size: 20px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.promo-badge {
+    background: rgba(255,255,255,0.25);
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    white-space: nowrap;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.3);
+    animation: promoPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes promoPulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.9;
+    }
+}
+
+/* 响应式适配 */
+@media (max-width: 768px) {
+    .promo-banner {
+        padding: 16px 20px;
+        margin-bottom: 30px;
+    }
+
+    .promo-content {
+        gap: 12px;
+    }
+
+    .promo-icon {
+        font-size: 24px;
+    }
+
+    .promo-highlight {
+        font-size: 16px;
+    }
+
+    .promo-desc {
+        font-size: 14px;
+    }
+
+    .promo-desc strong {
+        font-size: 16px;
+    }
+
+    .promo-badge {
+        font-size: 12px;
+        padding: 4px 12px;
+    }
+}
+
 .services-section {
     padding: 100px 0;
     background: linear-gradient(180deg, var(--bg-primary), var(--bg-secondary));

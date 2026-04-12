@@ -1,21 +1,56 @@
 # robots.txt for 智装OS
-# AI全自动装机平台
+# https://www.openclaw.cn/
 
 User-agent: *
 Allow: /
 
 # 禁止访问敏感目录
-Disallow: /pay/
-Disallow: /api/
 Disallow: /admin/
+Disallow: /private/
+Disallow: /config/
+Disallow: /*.json$
+Disallow: /*.xml$
 
-# 允许爬取静态资源
+# 允许搜索引擎抓取静态资源
 Allow: /css/
 Allow: /js/
 Allow: /images/
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.gif$
+Allow: /*.svg$
+Allow: /*.ico$
 
-# Sitemap位置（请替换为实际域名）
-Sitemap: https://www.zhizhuangos.com/sitemap.xml
-
-# 爬虫延迟
+# 特殊规则：Google
+User-agent: Googlebot
+Allow: /
 Crawl-delay: 1
+
+# 特殊规则：百度
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 1
+
+# 特殊规则：必应
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# 特殊规则：搜狗
+User-agent: Sogou
+Allow: /
+Crawl-delay: 2
+
+# 特殊规则：360搜索
+User-agent: 360Spider
+Allow: /
+Crawl-delay: 2
+
+# Sitemap位置
+Sitemap: https://www.openclaw.cn/sitemap.xml
+
+# 网站地图更新频率
+# 每周更新一次
