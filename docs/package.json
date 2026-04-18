@@ -1,0 +1,24 @@
+{
+  "name": "openclaw-os",
+  "version": "1.0.0",
+  "description": "智装OS - AI全自动装机平台",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server -p 8080 -c-1",
+    "serve": "npx live-server --port=8080"
+  },
+  "keywords": [
+    "智装OS",
+    "AI装机",
+    "Windows安装",
+    "系统重装",
+    "一键装机"
+  ],
+  "author": "智装OS",
+  "license": "MIT",
+  "homepage": "https://www.openclaw.cn",
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "live-server": "^1.2.2"
+  }
+}
