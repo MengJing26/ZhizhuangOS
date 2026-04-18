@@ -4,6 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>订单管理系统 - 智装OS</title>
+    <script>
+        // 订单管理系统密码保护
+        (function() {
+            const adminPassword = 'admin123'; // 可自行修改密码
+            
+            // 检查是否已登录
+            if (!localStorage.getItem('orders_admin_logged_in')) {
+                const password = prompt('请输入管理员密码：');
+                if (password !== adminPassword) {
+                    alert('密码错误，无权访问！');
+                    window.location.href = 'index.html';
+                    return;
+                }
+                // 登录成功，保存登录状态（30天）
+                localStorage.setItem('orders_admin_logged_in', 'true');
+                localStorage.setItem('orders_admin_expires', Date.now() + 30 * 24 * 60 * 60 * 1000);
+            } else {
+                // 检查登录是否过期
+                const expires = localStorage.getItem('orders_admin_expires');
+                if (Date.now() > expires) {
+                    localStorage.removeItem('orders_admin_logged_in');
+                    localStorage.removeItem('orders_admin_expires');
+                    location.reload();
+                }
+            }
+        })();
+    </script>
     <style>
         * {
             margin: 0;
