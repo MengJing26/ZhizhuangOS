@@ -1419,14 +1419,6 @@ const EditorSystem = {
         this.bindEvents();
         const promoBanner = document.querySelector('.promo-banner');
         if (promoBanner) this.originalPromoHTML = promoBanner.innerHTML;
-        // 版本号机制：代码更新时升级版本号，自动清除旧数据以加载新配置
-        const dataVersion = 'v4';
-        const storedVersion = localStorage.getItem('zhizhuang_os_version');
-        if (storedVersion !== dataVersion) {
-            localStorage.removeItem(this.state.dataKey);
-            localStorage.removeItem(this.state.backupKey);
-            localStorage.setItem('zhizhuang_os_version', dataVersion);
-        }
         this.loadSavedData();
     },
 
@@ -1738,13 +1730,20 @@ const EditorSystem = {
         });
 
         html += `</div>`;
-        html += `<div class="ep-footer"><button class="ep-btn ep-btn-cancel" id="epCancel">取消</button><button class="ep-btn ep-btn-save" id="epSave">💾 保存并退出</button></div>`;
+        html += `<div class="ep-footer">
+            <button class="ep-btn ep-btn-cancel" id="epCancel">取消</button>
+            <div style="flex:1;display:flex;gap:8px;justify-content:flex-end">
+                <button class="ep-btn" id="epDownloadJson" style="background:var(--accent-purple);color:white">📥 下载data.json</button>
+                <button class="ep-btn ep-btn-save" id="epSave">💾 保存并退出</button>
+            </div>
+        </div>`;
 
         panel.innerHTML = html;
 
         panel.querySelector('#epClose').addEventListener('click', () => this.exitEditMode());
         panel.querySelector('#epCancel').addEventListener('click', () => this.exitEditMode());
         panel.querySelector('#epSave').addEventListener('click', () => this.saveAndExit());
+        panel.querySelector('#epDownloadJson').addEventListener('click', () => this.downloadDataJson());
         panel.querySelector('#epAddCat').addEventListener('click', () => this.addCategory());
 
         panel.querySelectorAll('[data-act]').forEach(btn => {
@@ -2537,24 +2536,125 @@ const EditorSystem = {
     },
 
     loadSavedData() {
+        fetch('data.json')
+            .then(res => {
+                if (!res.ok) throw new Error('data.json not found');
+                return res.json();
+            })
+            .then(jsonData => {
+                if (jsonData && jsonData.categories && jsonData.categories.length > 0) {
+                    localStorage.setItem(this.state.dataKey, JSON.stringify(jsonData));
+                    this.applyJsonDataToPage(jsonData);
+                    if (jsonData.promo) this.applyPromoData(jsonData.promo);
+                    if (jsonData.categories) this.updateQuickAccess(jsonData.categories);
+                    showToast('✅ 已从 data.json 加载配置数据');
+                    return;
+                }
+                this.loadFromLocalStorage();
+            })
+            .catch(() => {
+                this.loadFromLocalStorage();
+            });
+    },
+
+    applyJsonDataToPage(data) {
+        const container = document.getElementById('serviceCategories');
+        if (!container) return;
+
+        const defaultGradients = [
+            { bg: 'linear-gradient(180deg, rgba(59, 130, 246, 0.2) 0%, rgba(59, 130, 246, 0.05) 50%, var(--bg-card) 100%)', border: 'rgba(59, 130, 246, 0.4)' },
+            { bg: 'linear-gradient(180deg, rgba(139, 92, 246, 0.2) 0%, rgba(139, 92, 246, 0.05) 50%, var(--bg-card) 100%)', border: 'rgba(139, 92, 246, 0.4)' },
+            { bg: 'linear-gradient(180deg, rgba(34, 197, 94, 0.2) 0%, rgba(34, 197, 94, 0.05) 50%, var(--bg-card) 100%)', border: 'rgba(34, 197, 94, 0.4)' },
+            { bg: 'linear-gradient(180deg, rgba(236, 72, 153, 0.2) 0%, rgba(236, 72, 153, 0.05) 50%, var(--bg-card) 100%)', border: 'rgba(236, 72, 153, 0.4)' },
+            { bg: 'linear-gradient(180deg, rgba(245, 158, 11, 0.2) 0%, rgba(245, 158, 11, 0.05) 50%, var(--bg-card) 100%)', border: 'rgba(245, 158, 11, 0.4)' },
+            { bg: 'linear-gradient(180deg, rgba(20, 184, 166, 0.2) 0%, rgba(20, 184, 166, 0.05) 50%, var(--bg-card) 100%)', border: 'rgba(20, 184, 166, 0.4)' }
+        ];
+
+        let html = '';
+        data.categories.forEach((cat, ci) => {
+            const catId = cat.id || ('cat_' + ci);
+            const isVisible = cat.visible !== undefined ? cat.visible : true;
+            const visibilityClass = isVisible ? '' : 'cat-hidden';
+            html += `<div id="${catId}" class="service-category ${visibilityClass}">`;
+            let catIconHtml = '';
+            if (cat.iconType === 'upload' && cat.icon && cat.icon.length > 2) {
+                catIconHtml = `<div class="category-icon"><img src="${cat.icon}" style="width:48px;height:48px;object-fit:contain" onerror="this.parentElement.textContent='📁'"></div>`;
+            } else {
+                catIconHtml = `<div class="category-icon">${cat.icon || '📁'}</div>`;
+            }
+            html += `<div class="category-header">${catIconHtml}<h3>${cat.name}</h3><p>${cat.desc || ''}</p></div>`;
+            html += `<div class="service-grid">`;
+
+            cat.products.forEach((p, pi) => {
+                const cardClass = p.cardClass || '';
+                const popularClass = p.popular ? ' popular' : '';
+                const badgeHtml = p.popular ? `<div class="popular-badge">${p.popular}</div>` : (p.badge ? `<div class="service-badge">${p.badge}</div>` : '');
+                const buyText = p.buyText || '立即购买';
+                const features = p.features && p.features.length > 0 ? p.features : ['服务内容'];
+                const featuresHtml = features.map(f => `<li>${f.startsWith('✓') ? f : '✓ ' + f}</li>`).join('');
+                const key = p.key || ('item_' + ci + '_' + pi);
+                const productKey = p.key || key;
+
+                const isNewProduct = cardClass === 'custom-product-card';
+                const gradientIdx = pi % defaultGradients.length;
+                const inlineStyle = isNewProduct ? ` style="background:${defaultGradients[gradientIdx].bg};border-color:${defaultGradients[gradientIdx].border}"` : '';
+
+                const deliveryData = p.delivery ? JSON.stringify(p.delivery).replace(/"/g, '&quot;') : 'null';
+                html += `<div class="service-card ${cardClass}${popularClass}"${inlineStyle} data-delivery-type="${p.deliveryType || 'links'}" data-delivery="${deliveryData}" onclick="openPay('${p.name}','${p.price}','${productKey}')">`;
+                html += badgeHtml;
+                if (p.iconType === 'upload' && p.icon && p.icon.length > 4) {
+                    html += `<div class="service-icon"><img src="${p.icon}" style="width:48px;height:48px;object-fit:contain" onerror="this.parentElement.textContent='📦'"></div>`;
+                } else {
+                    html += `<div class="service-icon">${p.icon || '📦'}</div>`;
+                }
+                html += `<h4>${p.name}</h4>`;
+                html += `<p class="service-desc">${p.desc || ''}</p>`;
+                html += `<div class="service-price"><span class="price-currency">¥</span><span class="price-value">${p.price || '0'}</span></div>`;
+                html += `<ul class="service-features">${featuresHtml}</ul>`;
+                html += `<button class="btn-buy">${buyText}</button>`;
+                html += `</div>`;
+            });
+
+            html += `</div></div>`;
+        });
+
+        container.innerHTML = html;
+    },
+
+    // ===== 下载 data.json 功能 =====
+    downloadDataJson() {
+        try {
+            const data = this.extractPageData();
+            const jsonStr = JSON.stringify(data, null, 2);
+            const blob = new Blob([jsonStr], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'data.json';
+            a.click();
+            URL.revokeObjectURL(url);
+            showToast('✅ data.json 已下载，可覆盖原有文件');
+        } catch (e) {
+            console.warn('下载 data.json 失败:', e);
+            showToast('❌ 下载 data.json 失败');
+        }
+    },
+
+    loadFromLocalStorage() {
         try {
             const savedData = localStorage.getItem(this.state.dataKey);
             if (!savedData) {
-                // 没有保存数据时，启动默认广告轮播
                 this.startDefaultPromoRotation();
                 return;
             }
             const data = JSON.parse(savedData);
             
-            // 检查促销数据
             if (data.promo) {
                 this.applyPromoData(data.promo);
             } else {
-                // 有保存数据但无促销数据，启动默认广告轮播
                 this.startDefaultPromoRotation();
             }
             
-            // 检查分类数据
             if (data.categories && Array.isArray(data.categories) && data.categories.length > 0) {
                 let dataValid = true;
                 data.categories.forEach(cat => {
@@ -2570,7 +2670,6 @@ const EditorSystem = {
                         p.cardClass = p.cardClass || '';
                         p.buyText = p.buyText || '立即购买';
                     });
-                    // 确保visible属性存在
                     if (cat.visible === undefined) cat.visible = true;
                 });
                 if (!dataValid) {

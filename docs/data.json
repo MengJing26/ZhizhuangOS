@@ -1,0 +1,93 @@
+{
+    "version": "1.0",
+    "promo": {
+        "visible": true,
+        "icon": "🎁",
+        "highlight": "限时福利：",
+        "desc": "下单后分享专属链接，好友成功付费3笔及以上，本单金额<strong>全额返还</strong>！",
+        "badge": "🔥 火热进行中",
+        "badgeVisible": true,
+        "list": [
+            "刚刚 祝贺X........X用户成功购买下单 本站源码出售",
+            "今日每分类都有限量低价名额，先到先得，抢完恢复原价。",
+            "15分钟前 恭喜W........W用户成功下单购买 搭建同类网站",
+            "下单后分享专属链接，好友成功付费3笔及以上，本单金额全额返！"
+        ],
+        "interval": 5
+    },
+    "categories": [
+        {
+            "id": "pricing",
+            "icon": "💻",
+            "iconType": "emoji",
+            "name": "系统安装服务",
+            "desc": "官方原版镜像，安全纯净无捆绑",
+            "visible": true,
+            "quickAccess": false,
+            "products": [
+                { "key": "win7", "name": "Windows 7", "price": "5", "icon": "💻", "iconType": "emoji", "desc": "经典稳定，兼容性强", "badge": "经典怀旧", "popular": "", "features": ["官方原版镜像", "专属安装命令", "图文安装教程", "永久使用授权"], "cardClass": "win7-card", "buyText": "立即购买", "deliveryType": "command", "delivery": { "type": "command", "successTitle": "专属安装命令已就绪" } },
+                { "key": "win10", "name": "Windows 10", "price": "8", "icon": "🖥️", "iconType": "emoji", "desc": "主流系统，性能均衡", "badge": "", "popular": "🔥 最受欢迎", "features": ["官方原版镜像", "专属安装命令", "图文安装教程", "优先技术支持"], "cardClass": "win10-card", "buyText": "立即购买", "deliveryType": "command", "delivery": { "type": "command", "successTitle": "专属安装命令已就绪" } },
+                { "key": "win11", "name": "Windows 11", "price": "8", "icon": "🚀", "iconType": "emoji", "desc": "全新体验，前沿科技", "badge": "最新旗舰", "popular": "", "features": ["官方原版镜像", "专属安装命令", "图文安装教程", "专属技术支持"], "cardClass": "win11-card", "buyText": "立即购买", "deliveryType": "command", "delivery": { "type": "command", "successTitle": "专属安装命令已就绪" } },
+                { "key": "win8", "name": "Win系统盘16G", "price": "38", "icon": "💿", "iconType": "emoji", "desc": "系统安装U盘，即插即用", "badge": "实用工具", "popular": "", "features": ["16G高速U盘", "多系统镜像", "即插即用", "永久使用授权"], "cardClass": "win8-card", "buyText": "立即购买", "deliveryType": "shipping", "delivery": { "type": "shipping", "successTitle": "订单已提交成功" } }
+            ]
+        },
+        {
+            "id": "lobster",
+            "icon": "🦞",
+            "iconType": "emoji",
+            "name": "OpenClaw龙虾社区",
+            "desc": "优质U盘资源，满足不同需求",
+            "visible": true,
+            "quickAccess": { "subtitle": "优质U盘，品质之选", "cardClass": "lobster-card" },
+            "products": [
+                { "key": "lobster-basic", "name": "龙虾U盘资源包", "price": "8.8", "icon": "📦", "iconType": "emoji", "desc": "基础资源，经济实惠", "badge": "入门之选", "popular": "", "features": ["基础资源包", "经济实惠", "持续更新", "永久访问权限"], "cardClass": "lobster-basic-card", "buyText": "立即购买", "deliveryType": "links", "delivery": { "type": "links", "successTitle": "访问权限已开通", "card1Title": "⚡ 虾盘U-claw", "hint": "点击下方链接访问虾盘资源，支持多种网盘", "links": [{ "label": "🔗 打开百度网盘", "url": "https://pan.baidu.com/s/1sj-jbGjL9xr6mPTvGQS0tw?pwd=gf5f", "display": "百度网盘: https://pan.baidu.com/s/1sj-jbGjL9xr6mPTvGQS0tw?pwd=gf5f 提取码: gf5f" }, { "label": "🔗 打开迅雷网盘", "url": "https://pan.xunlei.com/s/VOpbk6IG4taHwZ-gAYI_SHayA1?pwd=9vs5", "display": "迅雷网盘: https://pan.xunlei.com/s/VOpbk6IG4taHwZ-gAYI_SHayA1?pwd=9vs5" }, { "label": "🔗 打开夸克网盘", "url": "https://pan.quark.cn/s/07d114cdfbf2", "display": "夸克网盘: https://pan.quark.cn/s/07d114cdfbf2" }], "tutorial": { "title": "📖 使用教程", "steps": [{ "t": "选择网盘", "d": "根据您的需求，选择<strong>百度网盘、迅雷网盘或夸克网盘</strong>中的任意一个" }, { "t": "打开链接", "d": "点击上方对应的<strong>网盘链接</strong>，跳转到虾盘资源页面" }, { "t": "输入提取码", "d": "如需提取码，<strong>输入对应的提取码</strong>（百度网盘: gf5f，迅雷网盘: 9vs5）" }, { "t": "转存下载", "d": "将资源<strong>转存到您的网盘</strong>，然后下载使用即可 🎉" }] }, "notice": { "title": "⚠️ 使用提示", "items": ["<strong>百度网盘</strong>提取码: gf5f", "<strong>迅雷网盘</strong>提取码: 9vs5（复制链接后打开迅雷更方便）", "<strong>夸克网盘</strong>无需提取码，直接访问", "网盘链接 <strong>永久有效</strong>，建议收藏保存", "如遇链接失效，请联系客服重新获取"] } } },
+                { "key": "lobster-pure", "name": "高速龙虾U盘(8G版)", "price": "38", "icon": "⚡", "iconType": "emoji", "desc": "高速纯净，品质之选", "badge": "", "popular": "🔥 最受欢迎", "features": ["高速传输", "纯净资源", "品质保障", "永久访问权限"], "cardClass": "lobster-pure-card", "buyText": "立即购买", "deliveryType": "links", "delivery": null },
+                { "key": "lobster-mix", "name": "高速龙虾U盘(16G版)", "price": "68", "icon": "🎁", "iconType": "emoji", "desc": "系统整合，豪华配置", "badge": "豪华套餐", "popular": "", "features": ["系统整合", "豪华配置", "全面覆盖", "永久访问权限"], "cardClass": "lobster-mix-card", "buyText": "立即购买", "deliveryType": "links", "delivery": null },
+                { "key": "lobster-32g", "name": "高速龙虾U盘(32G版)", "price": "98", "icon": "💎", "iconType": "emoji", "desc": "超大容量，至尊之选", "badge": "至尊旗舰", "popular": "", "features": ["超大容量", "至尊配置", "全面覆盖", "永久访问权限"], "cardClass": "lobster-32g-card", "buyText": "立即购买", "deliveryType": "links", "delivery": null }
+            ]
+        },
+        {
+            "id": "media",
+            "icon": "🎬",
+            "iconType": "emoji",
+            "name": "影视资源网盘基地",
+            "desc": "海量影视资源，一键获取",
+            "visible": true,
+            "quickAccess": { "subtitle": "海量影视，一键获取", "cardClass": "media-card" },
+            "products": [
+                { "key": "media-short", "name": "短剧漫剧AI剧", "price": "0.88", "icon": "📱", "iconType": "emoji", "desc": "短视频剧、AI生成剧", "badge": "新兴潮流", "popular": "", "features": ["精选内容", "快速更新", "多种格式", "永久访问权限"], "cardClass": "media-short-card", "buyText": "立即购买", "deliveryType": "links", "delivery": { "type": "links", "successTitle": "网盘访问权限已开通", "card1Title": "⚡ 影视资源网盘基地", "hint": "点击下方链接访问影视资源网盘基地，搜索关键词找到对应合意的资源", "links": [{ "label": "🔗 打开网盘1", "url": "http://aa.plool.com/app/index.html?id=211229kl", "display": "网盘地址1: http://aa.plool.com/app/index.html?id=211229kl" }, { "label": "🔗 打开网盘2", "url": "http://m.dbpan.com/app/index.html?id=211229kl", "display": "网盘地址2: http://m.dbpan.com/app/index.html?id=211229kl" }], "tutorial": { "title": "📖 使用教程", "steps": [{ "t": "打开网盘链接", "d": "点击上方任意一个网盘链接，进入影视资源网盘基地" }, { "t": "搜索关键词", "d": "在网盘中<strong>搜索关键词</strong>，找到对应合意的资源" }, { "t": "转存到网盘", "d": "将找到的资源<strong>转存到对应的网盘</strong>（百度网盘或夸克网盘）" }, { "t": "开始追剧", "d": "打开网盘App，<strong>美美哒去追剧</strong>即可享受精彩内容 🎉" }] }, "notice": { "title": "⚠️ 使用提示", "items": ["<strong>搜索关键词</strong>找到对应合意的资源", "将资源<strong>转存到对应的网盘</strong>", "去网盘App上<strong>美美哒去追剧</strong>即可", "网盘链接 <strong>永久有效</strong>，建议收藏保存", "如遇链接失效，请联系客服重新获取"] } } },
+                { "key": "media-domestic", "name": "国内影视剧", "price": "2", "icon": "🎬", "iconType": "emoji", "desc": "国产剧、综艺、纪录片", "badge": "热门推荐", "popular": "", "features": ["海量资源库", "持续更新", "高清画质", "永久访问权限"], "cardClass": "media-domestic-card", "buyText": "立即购买", "deliveryType": "links", "delivery": { "type": "links", "successTitle": "网盘访问权限已开通", "card1Title": "⚡ 影视资源网盘基地", "hint": "点击下方链接访问影视资源网盘基地，搜索关键词找到对应合意的资源", "links": [{ "label": "🔗 打开网盘1", "url": "http://aa.plool.com/app/index.html?id=211229kl", "display": "网盘地址1: http://aa.plool.com/app/index.html?id=211229kl" }, { "label": "🔗 打开网盘2", "url": "http://m.dbpan.com/app/index.html?id=211229kl", "display": "网盘地址2: http://m.dbpan.com/app/index.html?id=211229kl" }], "tutorial": { "title": "📖 使用教程", "steps": [{ "t": "打开网盘链接", "d": "点击上方任意一个网盘链接，进入影视资源网盘基地" }, { "t": "搜索关键词", "d": "在网盘中<strong>搜索关键词</strong>，找到对应合意的资源" }, { "t": "转存到网盘", "d": "将找到的资源<strong>转存到对应的网盘</strong>（百度网盘或夸克网盘）" }, { "t": "开始追剧", "d": "打开网盘App，<strong>美美哒去追剧</strong>即可享受精彩内容 🎉" }] }, "notice": { "title": "⚠️ 使用提示", "items": ["<strong>搜索关键词</strong>找到对应合意的资源", "将资源<strong>转存到对应的网盘</strong>", "去网盘App上<strong>美美哒去追剧</strong>即可", "网盘链接 <strong>永久有效</strong>，建议收藏保存", "如遇链接失效，请联系客服重新获取"] } } },
+                { "key": "media-foreign", "name": "国外影视剧", "price": "2", "icon": "🎥", "iconType": "emoji", "desc": "美剧、韩剧、日剧等", "badge": "", "popular": "🔥 最受欢迎", "features": ["海量资源库", "中文字幕", "高清画质", "永久访问权限"], "cardClass": "media-foreign-card", "buyText": "立即购买", "deliveryType": "links", "delivery": { "type": "links", "successTitle": "网盘访问权限已开通", "card1Title": "⚡ 影视资源网盘基地", "hint": "点击下方链接访问影视资源网盘基地，搜索关键词找到对应合意的资源", "links": [{ "label": "🔗 打开网盘1", "url": "http://aa.plool.com/app/index.html?id=211229kl", "display": "网盘地址1: http://aa.plool.com/app/index.html?id=211229kl" }, { "label": "🔗 打开网盘2", "url": "http://m.dbpan.com/app/index.html?id=211229kl", "display": "网盘地址2: http://m.dbpan.com/app/index.html?id=211229kl" }], "tutorial": { "title": "📖 使用教程", "steps": [{ "t": "打开网盘链接", "d": "点击上方任意一个网盘链接，进入影视资源网盘基地" }, { "t": "搜索关键词", "d": "在网盘中<strong>搜索关键词</strong>，找到对应合意的资源" }, { "t": "转存到网盘", "d": "将找到的资源<strong>转存到对应的网盘</strong>（百度网盘或夸克网盘）" }, { "t": "开始追剧", "d": "打开网盘App，<strong>美美哒去追剧</strong>即可享受精彩内容 🎉" }] }, "notice": { "title": "⚠️ 使用提示", "items": ["<strong>搜索关键词</strong>找到对应合意的资源", "将资源<strong>转存到对应的网盘</strong>", "去网盘App上<strong>美美哒去追剧</strong>即可", "网盘链接 <strong>永久有效</strong>，建议收藏保存", "如遇链接失效，请联系客服重新获取"] } } },
+                { "key": "media-global", "name": "全球高清影视", "price": "0.88", "icon": "🌍", "iconType": "emoji", "desc": "全球影视，免费观看", "badge": "免费福利", "popular": "", "features": ["全球影视资源", "高清画质", "多语言字幕", "免费观看"], "cardClass": "media-global-card", "buyText": "立即获取", "deliveryType": "links", "delivery": { "type": "links", "successTitle": "访问权限已开通", "card1Title": "⚡ 全球高清影视资源免费看", "hint": "点击下方链接下载一起看App，畅享全球高清影视", "links": [{ "label": "🔗 打开下载页面", "url": "https://m.yqkxma.com/dl/index.html", "display": "一起看App: https://m.yqkxma.com/dl/index.html" }], "tutorial": { "title": "📖 使用教程", "steps": [{ "t": "打开下载页面", "d": "点击上方链接，进入<strong>一起看App下载页面</strong>" }, { "t": "下载安装", "d": "根据您的设备<strong>下载对应版本</strong>（Android/iOS），完成安装" }, { "t": "注册登录", "d": "打开App，<strong>注册账号并登录</strong>，开始使用" }, { "t": "畅享影视", "d": "搜索您想看的影视内容，<strong>免费观看全球高清影视</strong> 🎉" }] }, "notice": { "title": "⚠️ 使用提示", "items": ["支持<strong>Android和iOS</strong>双平台", "全球影视资源<strong>免费观看</strong>，高清画质", "支持<strong>多语言字幕</strong>，满足不同需求", "App链接 <strong>永久有效</strong>，建议收藏保存", "如遇链接失效，请联系客服重新获取"] } } }
+            ]
+        },
+        {
+            "id": "startup",
+            "icon": "💼",
+            "iconType": "emoji",
+            "name": "网络创业项目基地",
+            "desc": "精选创业项目，助力成功之路",
+            "visible": true,
+            "quickAccess": { "subtitle": "创业项目，助力成功", "cardClass": "startup-card" },
+            "products": [
+                { "key": "startup-service", "name": "生活服务", "price": "9.9", "icon": "🛠️", "iconType": "emoji", "desc": "生活服务资源合集", "badge": "实用工具", "popular": "", "features": ["实用服务资源", "便捷使用指南", "持续更新内容", "永久访问权限"], "cardClass": "startup-service-card", "buyText": "立即购买", "deliveryType": "links", "delivery": { "type": "links", "successTitle": "资源访问权限已开通", "card1Title": "⚡ 网络创业项目基地", "hint": "自用省钱，推广赚钱 - 点击下方链接开始您的创业之旅", "links": [{ "label": "🔗 打开资源平台", "url": "https://8z03s.riar0.xyz/#/", "display": "资源地址: https://8z03s.riar0.xyz/#/" }], "tutorial": { "title": "📖 使用教程", "steps": [{ "t": "打开资源平台", "d": "点击上方链接，进入网络创业项目平台" }, { "t": "自用省钱", "d": "在平台中<strong>购买所需资源</strong>，享受优惠价格，节省成本" }, { "t": "推广赚钱", "d": "将平台资源<strong>分享给他人</strong>，通过推广获得收益回报" }, { "t": "开启创业之路", "d": "自用省钱 + 推广赚钱，<strong>双管齐下</strong>，开启您的创业成功之路 🎉" }] }, "notice": { "title": "⚠️ 使用提示", "items": ["<strong>自用省钱</strong>：购买资源享受优惠价格", "<strong>推广赚钱</strong>：分享资源获得收益回报", "平台资源<strong>持续更新</strong>，建议定期查看", "资源链接 <strong>永久有效</strong>，建议收藏保存", "如遇链接失效，请联系客服重新获取"] } } },
+                { "key": "startup-project", "name": "网创项目", "price": "19.9", "icon": "💼", "iconType": "emoji", "desc": "网络创业项目合集", "badge": "", "popular": "🔥 热门推荐", "features": ["精选优质项目", "详细操作教程", "持续更新资源", "永久访问权限"], "cardClass": "startup-project-card", "buyText": "立即购买", "deliveryType": "links", "delivery": { "type": "links", "successTitle": "资源访问权限已开通", "card1Title": "⚡ 网络创业项目基地", "hint": "自用省钱，推广赚钱 - 点击下方链接开始您的创业之旅", "links": [{ "label": "🔗 打开资源平台", "url": "https://8z03s.riar0.xyz/#/", "display": "资源地址: https://8z03s.riar0.xyz/#/" }], "tutorial": { "title": "📖 使用教程", "steps": [{ "t": "打开资源平台", "d": "点击上方链接，进入网络创业项目平台" }, { "t": "自用省钱", "d": "在平台中<strong>购买所需资源</strong>，享受优惠价格，节省成本" }, { "t": "推广赚钱", "d": "将平台资源<strong>分享给他人</strong>，通过推广获得收益回报" }, { "t": "开启创业之路", "d": "自用省钱 + 推广赚钱，<strong>双管齐下</strong>，开启您的创业成功之路 🎉" }] }, "notice": { "title": "⚠️ 使用提示", "items": ["<strong>自用省钱</strong>：购买资源享受优惠价格", "<strong>推广赚钱</strong>：分享资源获得收益回报", "平台资源<strong>持续更新</strong>，建议定期查看", "资源链接 <strong>永久有效</strong>，建议收藏保存", "如遇链接失效，请联系客服重新获取"] } } },
+                { "key": "startup-source", "name": "本站源码出售", "price": "199", "icon": "💻", "iconType": "emoji", "desc": "完整源码，一键部署", "badge": "创业首选", "popular": "", "features": ["完整网站源码", "一键部署教程", "自定义收款码", "永久使用授权"], "cardClass": "startup-source-card", "buyText": "立即购买", "deliveryType": "links", "delivery": { "type": "links", "successTitle": "访问权限已开通", "card1Title": "⚡ AI智装啦OS完整源码", "hint": "点击下方链接下载源码，支持多种网盘", "links": [{ "label": "🔗 打开百度网盘", "url": "https://pan.baidu.com/s/1NMuWo-8aZoNDcjWNUv4B6A?pwd=86qb", "display": "百度网盘: https://pan.baidu.com/s/1NMuWo-8aZoNDcjWNUv4B6A?pwd=86qb 提取码: 86qb" }, { "label": "🔗 打开迅雷网盘", "url": "https://pan.xunlei.com/s/VOplSgy94Hpza3_qbN9JdW5kA1?pwd=99ek", "display": "迅雷网盘: https://pan.xunlei.com/s/VOplSgy94Hpza3_qbN9JdW5kA1?pwd=99ek" }, { "label": "🔗 打开夸克网盘", "url": "https://pan.quark.cn/s/beedb8dacd14", "display": "夸克网盘: https://pan.quark.cn/s/beedb8dacd14" }], "tutorial": { "title": "📖 部署教程", "steps": [{ "t": "下载源码", "d": "从上方网盘链接<strong>下载完整源码包</strong>到本地" }, { "t": "替换收款码", "d": "将源码中的收款码图片<strong>替换为您自己的收款码</strong>" }, { "t": "部署到服务器", "d": "将源码上传到您的服务器，<strong>配置并启动网站</strong>" }, { "t": "开始运营", "d": "网站部署完成后，<strong>即可开始您的创业运营之旅</strong> 🎉" }] }, "notice": { "title": "⚠️ 使用提示", "items": ["<strong>百度网盘</strong>提取码: 86qb", "<strong>迅雷网盘</strong>提取码: 99ek（复制链接后打开迅雷更方便）", "<strong>夸克网盘</strong>无需提取码，直接访问", "只需<strong>替换收款码</strong>即可开始运营自己的网站", "源码链接 <strong>永久有效</strong>，建议收藏保存"] } } },
+                { "key": "startup-build", "name": "搭建同类网站", "price": "299", "icon": "🏗️", "iconType": "emoji", "desc": "专属定制，技术支持", "badge": "定制服务", "popular": "", "features": ["一对一技术支持", "专属定制服务", "完整部署协助", "售后技术保障"], "cardClass": "startup-build-card", "buyText": "立即购买", "deliveryType": "links", "delivery": { "type": "links", "successTitle": "服务已订购", "card1Title": "⚡ 三选一下载网站源码", "hint": "点击下方链接下载源码，支持多种网盘", "links": [{ "label": "🔗 打开百度网盘", "url": "https://pan.baidu.com/s/1NMuWo-8aZoNDcjWNUv4B6A?pwd=86qb", "display": "百度网盘: https://pan.baidu.com/s/1NMuWo-8aZoNDcjWNUv4B6A?pwd=86qb 提取码: 86qb" }, { "label": "🔗 打开迅雷网盘", "url": "https://pan.xunlei.com/s/VOplSgy94Hpza3_qbN9JdW5kA1?pwd=99ek", "display": "迅雷网盘: https://pan.xunlei.com/s/VOplSgy94Hpza3_qbN9JdW5kA1?pwd=99ek" }, { "label": "🔗 打开夸克网盘", "url": "https://pan.quark.cn/s/beedb8dacd14", "display": "夸克网盘: https://pan.quark.cn/s/beedb8dacd14" }], "tutorial": { "title": "📖 搭建流程", "steps": [{ "t": "准备域名", "d": "准备好<strong>已备案域名</strong>，确保域名可以正常解析" }, { "t": "购买服务器", "d": "购买好服务器，<strong>确保服务器配置满足要求</strong>" }, { "t": "下载源码", "d": "从上方网盘<strong>下载网站源码到本地</strong>" }, { "t": "联系站长", "d": "联系本站长本人继续<strong>远程操作搭建服务</strong> 🎉" }] }, "notice": { "title": "⚠️ 联系方式", "items": ["<strong>QQ</strong>: 1025466935", "<strong>微信</strong>: imitao520（请备注来意）", "<strong>工作日</strong>：9:00--22:00", "<strong>节假日</strong>：10:00-21:00", "请在<strong>准备好域名、服务器、源码后</strong>联系站长"] } } }
+            ]
+        },
+        {
+            "id": "opc",
+            "icon": "🌐",
+            "iconType": "emoji",
+            "name": "OPC异人社",
+            "desc": "异人导航，探索无限可能",
+            "visible": true,
+            "quickAccess": { "subtitle": "异人导航，探索无限", "cardClass": "opc-card" },
+            "products": [
+                { "key": "opc-lobster-nav", "name": "爱爪窝龙虾导航", "price": "1.8", "icon": "🦞", "iconType": "emoji", "desc": "龙虾导航，一爪即达", "badge": "超值导航", "popular": "", "features": ["龙虾导航服务", "持续更新", "永久访问权限", "专属导航入口"], "cardClass": "opc-lobster-nav-card", "buyText": "立即获取", "deliveryType": "links", "delivery": null },
+                { "key": "opc-cross-border", "name": "跨境卖家电商资讯", "price": "2.8", "icon": "🌐", "iconType": "emoji", "desc": "跨境电商资讯，助力出海", "badge": "出海必备", "popular": "", "features": ["跨境电商资讯", "持续更新", "永久访问权限", "专属资讯入口"], "cardClass": "opc-cross-border-card", "buyText": "立即获取", "deliveryType": "links", "delivery": null }
+            ]
+        }
+    ]
+}
